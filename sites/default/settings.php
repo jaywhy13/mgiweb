@@ -208,7 +208,7 @@ $databases = array (
       'database' => 'mgi',
       'username' => 'evosys',
       'password' => 'password',
-      'host' => '10.0.41.140',
+      'host' => 'localhost',
       'port' => '5432',
       'driver' => 'pgsql',
       'prefix' => '',
@@ -227,7 +227,7 @@ $databases = array (
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$update_free_access = FALSE;
+$update_free_access = true;
 
 /**
  * Salt for one-time login links and cancel links, form tokens, etc.
@@ -246,7 +246,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'XVwGjSzdk88uMmDxjdlGO_vACO8n3pUWu1cDwqtW-0k';
+$drupal_hash_salt = 'JLCAmPnHTIPa12mjvnzzribQ4Ln-vj9dWTMTQjqLQYQ';
 
 /**
  * Base URL (optional).
