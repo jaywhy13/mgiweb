@@ -1,0 +1,16 @@
+name = Facebook Integration
+description = Server-side and client side Facebook Platform APIs.
+package = Facebook
+configure = admin/config/fridge/fridge_app
+core = 7.x
+
+files[] = fridge.module
+files[] = fridge.theme.inc
+
+;;scripts[] = fridge.js
+; Information added by drupal.org packaging script on 2012-03-16
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "fridge"
+datestamp = "1331904039"
+

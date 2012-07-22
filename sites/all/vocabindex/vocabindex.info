@@ -1,0 +1,14 @@
+name = Vocabulary Index
+description = "Easily browse through taxonomy. Display vocabularies like trees, a directory index or sort their terms alphabetically."
+core = 7.x
+dependencies[] = taxonomy
+files[] = vocabindex.install
+files[] = vocabindex.module
+files[] = vocabindex.admin.inc
+files[] = vocabindex.view.inc
+; Information added by drupal.org packaging script on 2011-02-25
+version = "7.x-2.x-dev"
+core = "7.x"
+project = "vocabindex"
+datestamp = "1298620680"
+

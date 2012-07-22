@@ -1,0 +1,17 @@
+name = Facebook Integration: Post to Facebook
+description = Automatically link from Facebook to content on this server.
+package = Facebook
+configure = admin/config/fridge/fridge_post
+core = 7.x
+
+dependencies[] = fridge
+
+files[] = fridge_post.module
+
+
+; Information added by drupal.org packaging script on 2012-03-16
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "fridge"
+datestamp = "1331904039"
+

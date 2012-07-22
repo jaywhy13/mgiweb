@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Facebook Connect
+ */
+
+define('FRIDGE_CONNECT_PATH_ADMIN', FRIDGE_PATH_ADMIN_CONFIG . '/fridge_connect');
+
+/**
+ * Implements hook_menu().
+ */
+function fridge_connect_menu() {
+  $items = array();
+
+  // Administration
+
+  $items[FRIDGE_CONNECT_PATH_ADMIN] = array(
+    'title' => 'Connect',
+    'description' => 'Site-wide connection to Facebook.com.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('fridge_connect_admin_form'),
+    'access arguments' => array(FRIDGE_PERM_ADMINISTER),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'fridge_connect.admin.inc',
+    'file path' => drupal_get_path('module', 'fridge_connect'),
+  );
+
+
+
+  return $items;
+}
+

@@ -1,0 +1,15 @@
+name = Facebook Integration: Connect
+description = Painless Facebook, via Fridge Pro.
+package = Facebook
+configure = admin/config/fridge/fridge_connect
+core = 7.x
+
+files[] = fridge_connect.module
+
+;;scripts[] = fridge.js
+; Information added by drupal.org packaging script on 2012-03-16
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "fridge"
+datestamp = "1331904039"
+

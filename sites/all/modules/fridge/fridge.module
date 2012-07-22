@@ -1,0 +1,426 @@
+<?php
+
+/**
+ * @file
+ */
+
+define('FRIDGE_PERM_ADMINISTER', 'fridge_administer');
+
+function fridge_init() {
+  // Add our module's javascript.
+  if (variable_get('fridge_add_js', TRUE)) {
+    drupal_add_js(drupal_get_path('module', 'fridge') . '/fridge.js', array(
+                    'type' => 'file',
+                    'scope' => 'header',
+                    'group' => JS_LIBRARY,
+                  ));
+    $fridge_app = fridge_app();
+    $app_id = $fridge_app['client_id'];
+    $key = "fridge_$app_id";
+    if (!empty($_SESSION) &&
+        !empty($_SESSION[$key]) &&
+        !empty($_SESSION[$key]['status'])) {
+      $status = $_SESSION[$key]['status'];
+    }
+    else {
+      $status = 'unknown';
+    }
+
+    drupal_add_js(array('fridge' => $fridge_app), 'setting');
+    // Javascript settings needed by fridge.js.
+    drupal_add_js(array('fridge' => array(
+                          'ajax_event_url' => url(FRIDGE_PATH_AJAX_EVENT, array('absolute' => TRUE)),
+                          'status' => $status,
+                        ),
+                  ), 'setting');
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function fridge_permission() {
+  return array(
+    FRIDGE_PERM_ADMINISTER => array(
+      'title' => t('Administer Facebook integration.'),
+    ),
+  );
+}
+
+// Note that if these paths change, the .info files have to change as well.
+define('FRIDGE_PATH_ADMIN_CONFIG', 'admin/config/fridge');
+define('FRIDGE_PATH_ADMIN_ARGS', 3);
+define('FRIDGE_PATH_ADMIN_APP', FRIDGE_PATH_ADMIN_CONFIG . '/fridge_app');
+define('FRIDGE_PATH_AJAX_EVENT', 'fridge/ajax');
+define('FRIDGE_PATH_AJAX_EVENT_ARGS', 2);
+
+/**
+ * Implements hook_menu().
+ */
+function fridge_menu() {
+  $items = array();
+
+  // Administration
+  $items[FRIDGE_PATH_ADMIN_CONFIG] = array(
+    // This confusing data structure does good things in D7.
+    'title' => 'Facebook',
+    'description' => 'Connectivity to facebook.com.',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  /*
+  $items[FRIDGE_PATH_ADMIN_CONFIG . '/default'] = array(
+    'title' => 'Facebook Integration',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+  */
+
+  $items[FRIDGE_PATH_ADMIN_APP] = array(
+    'title' => 'Application',
+    'weight' => 2,
+    'description' => 'Use a custom application when posting to facebook.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('fridge_admin_app_form'),
+    'access arguments' => array(FRIDGE_PERM_ADMINISTER),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'fridge.admin.inc',
+    'file path' => drupal_get_path('module', 'fridge'),
+  );
+
+  // Allow a user to get a token.
+  $items['fridge/token'] = array(
+    'title' => 'Fridge Token',
+    'page callback' => 'fridge_page_token',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  // Ajax event handler.
+  $items[FRIDGE_PATH_AJAX_EVENT . '/%'] = array(
+    'page callback' => 'fridge_ajax_event',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page arguments' => array(FRIDGE_PATH_AJAX_EVENT_ARGS),
+  );
+
+
+  return $items;
+}
+
+function fridge_theme() {
+  return array(
+    'fridge_markup' => array(
+      'arguments' => array(
+        'not_connected_markup' => NULL,
+        'connected_markup' => '<fb:profile-pic linked=false uid=loggedinuser></fb:profile-pic>',
+        'options' => NULL,
+      ),
+      'file' => 'fridge.theme.inc',
+    ),
+  );
+
+}
+
+
+/**
+ * Page callback allows user to get a token.
+ */
+function fridge_page_token() {
+  if (isset($_REQUEST['access_token'])) {
+    $token = fridge_access_token();
+    return "Got the token!";
+  }
+  else {
+    $url = fridge_user_token_url();
+    header("Location: $url");
+
+    return __FUNCTION__; // debug
+  }
+}
+
+
+//// misc helper functions.
+
+
+/**
+ * The Fridge application provides the connection between your website and facebook.
+ */
+function fridge_app() {
+  if (variable_get('fridge_use_devel', FALSE)) {
+    return variable_get('fridge_app_devel', fridge_app_devel_defaults());
+  }
+  else {
+    return variable_get('fridge_app', fridge_app_defaults());
+  }
+}
+
+function fridge_app_defaults() {
+  return array(
+    'client_id' => '138744759520314',
+    'base_url' => 'http://apps.facebook.com/the-fridge',
+    'name' => 'The Fridge BETA',
+  );
+}
+function fridge_app_devel_defaults() {
+  return array(
+    'client_id' => '102712003139606',
+    'base_url' => 'http://apps.facebook.com/the-fridge-beta',
+    'name' => 'The Fridge BETA',
+  );
+}
+
+/**
+ * The access token allows the Fridge app to publish and read posts.
+ *
+ */
+function fridge_access_token() {
+  static $token;
+
+  if (!isset($token)) {
+    // Prefer the user-specific token.
+    $token = fridge_user_token();
+    if (!$token) {
+      $token = fridge_admin_token();
+    }
+  }
+  return $token;
+}
+
+/*
+ * This returns the site-wide token, so that individual users do not need to
+ * authorize the fridge app.
+ */
+function fridge_admin_token() {
+  return variable_get('fridge_access_token', NULL);
+}
+
+/**
+ * The user-specific token allows individual users to post to their own feeds.
+ */
+function fridge_user_token() {
+  static $cache = NULL;
+
+  if ($cache)
+    return $cache;
+
+  $app = fridge_app();
+  $app_id = $app['client_id'];
+  if (isset($_REQUEST['access_token'])) {
+    $cache = $_REQUEST['access_token'];
+    $_SESSION["fridge_$app_id"]['access_token'] = $cache;
+    return $cache;
+  }
+
+  if (isset($_SESSION["fridge_$app_id"]) && isset($_SESSION["fridge_$app_id"]['access_token'])) {
+    $cache = $_SESSION["fridge_$app_id"]['access_token'];
+    return $cache;
+  }
+}
+
+/**
+ * To configure this module, we need to send the user to the Fridge app, in
+ * order to authorize it.  The page we send them to explains the various
+ * permission options, then presents facebook's dialog for authorizing the
+ * permissions.
+ */
+function fridge_user_token_url() {
+  $app = fridge_app();
+  $this_page = url(current_path(), array('absolute' => TRUE));
+
+  $url = url($app['base_url'] . '/fridge_app/authorize/form', array(
+               'query' => array(
+                 'redirect_uri' => $this_page,
+                 'site_name' => variable_get('site_name', ''),
+               ),
+             ));
+  return $url;
+}
+
+/**
+ * Wrapper around drupal_http_request() which detects error codes.
+ */
+function fridge_http($url, array $options = array()) {
+  $response = drupal_http_request($url, $options);
+
+  if ($response->data) {
+    $data = json_decode($response->data, TRUE);
+    // Yes, it's double encoded. At least sometimes.
+    if (is_string($data)) {
+      //dpm($data, __FUNCTION__ . " double encoded response!"); // Still happens?
+      $data = json_decode($data, TRUE);
+    }
+  }
+
+  if (isset($response->error)) {
+    $msg = t("!error (!code): !detail", array(
+               '!error' => $response->error,
+               '!code' => $response->code,
+               '!detail' => implode(' ', $data['error']),
+             ));
+    throw new Exception($msg, $response->code);
+  }
+  elseif (isset($data['error'])) {
+    // Sometimes facebook response is OK, even though data is error.
+    $msg = t("!error (!code): !detail", array(
+               '!error' => $data['error'],
+               '!code' => $data['error']['type'],
+               '!detail' => implode(' ', $data['error']),
+             ));
+    throw new Exception($msg, $response->code);
+  }
+  else {
+    // Success.
+    return $data;
+  }
+}
+
+/**
+ * Read from facebook's graph.
+ */
+function fridge_graph($path, $token = NULL) {
+  $params['access_token'] = ($token !== NULL) ? $token : fridge_access_token();
+  $url = url("https://graph.facebook.com/$path", array(
+               'query' => $params,
+             ));
+  return fridge_http($url);
+}
+
+/**
+ * Write to facebook's graph.
+ */
+function fridge_graph_post($path, $params) {
+  if (!isset($params['access_token'])) {
+    $params['access_token'] = fridge_access_token();
+  }
+  $url = url("https://graph.facebook.com/$path");
+
+  $options = array(
+    'method' => 'POST',
+    'data' => drupal_http_build_query($params),
+  );
+
+  $data = fridge_http($url, $options);
+  return $data;
+}
+
+/**
+ * Facebook's older api methods.
+ */
+function fridge_api($method, $params) {
+  $params['format'] = 'json-strings';
+  $app = fridge_app();
+  $params['api_key'] = $app['client_id'];
+  $url = url("https://api.facebook.com/method/{$method}", array(
+               'query' => $params,
+             ));
+  $http = drupal_http_request($url);
+
+  if ($http->data) {
+    $data = json_decode($http->data, TRUE);
+    // Yes, it's double encoded. At least sometimes.
+    if (is_string($data)) {
+      $data = json_decode($data, TRUE);
+    }
+    if (is_array($data)) {
+      if (isset($data['error_code'])) {
+        throw new Exception($data['error_msg'], $data['error_code']);
+      }
+    }
+    elseif ($http->data == 'true' || $http->code == 200) {
+      // No problems.
+    }
+    else {
+      // Never reach this???
+      if (function_exists('dpm')) dpm($http, __FUNCTION__ . " unexpected result from $url"); // XXX
+    }
+    return $data;
+  }
+  else {
+    // Should we throw FacebookApiException, or plain old exception?
+    throw new FacebookApiException(
+      array(
+        'error_msg' => t('fb_call_method failed calling !method.  !detail', array(
+                           '!method' => $method,
+                           '!detail' => $http->error,
+                         )),
+        'error_code' => $http->code,
+      ));
+  }
+}
+
+function fridge_fql($query, $token = NULL) {
+  $params['query'] = $query;
+  if ($token === NULL) {
+    $params['access_token'] = fridge_access_token();
+  }
+  elseif ($token) {
+    $params['access_token'] = $token;
+  }
+
+  return fridge_api('fql.query', $params);
+
+}
+
+function fridge_log_exception($e, $detail=NULL) {
+  // @TODO: get the translation right.
+  $text = "$detail <em>" . $e->getMessage() . '</em>';
+  if (user_access('access administration pages')) {
+    drupal_set_message($text, 'error');
+  }
+  watchdog('fridge', $text, array(), WATCHDOG_ERROR);
+}
+
+
+/**
+ * Menu callback for ajax event.
+ *
+ * Returns json encoded array of javascript to execute in response to this event..
+ */
+function fridge_ajax_event($event_type) {
+  $app_id = $_REQUEST['app_id'];
+  if (!empty($_REQUEST['signed_request'])) {
+    $sr = fridge_parse_signed_request($_REQUEST['signed_request']);
+    $_SESSION["fridge_$app_id"]['signed_request'] = $sr;
+    $_SESSION["fridge_$app_id"]['fbu'] = $sr['user_id'];
+    $_SESSION["fridge_$app_id"]['status'] = $_REQUEST['status'];
+    $_SESSION["fridge_$app_id"]['access_token'] = $_REQUEST['access_token'];
+  }
+  else {
+    unset($_SESSION["fridge_$app_id"]);
+  }
+  // @TODO let third party modules act here.
+  $js_array = array();
+
+  drupal_json_output(array_values($js_array));
+  //exit(); // No longer needed, and would prevent drupal from settings cookies.
+}
+
+
+/**
+ * Based on https://developers.facebook.com/docs/authentication/signed_request/.
+ */
+function fridge_parse_signed_request($signed_request) {
+  list($encoded_sig, $payload) = explode('.', $signed_request, 2);
+
+  // decode the data
+  $sig = fridge_base64_url_decode($encoded_sig);
+  $data = json_decode(fridge_base64_url_decode($payload), TRUE);
+
+  return $data;
+}
+
+/**
+ * Base64 encoding that doesn't need to be urlencode()ed.
+ * Exactly the same as base64_encode except it uses
+ *   - instead of +
+ *   _ instead of /
+ *
+ * @param String base64UrlEncodeded string
+ */
+function fridge_base64_url_decode($input) {
+  return base64_decode(strtr($input, '-_', '+/'));
+}
