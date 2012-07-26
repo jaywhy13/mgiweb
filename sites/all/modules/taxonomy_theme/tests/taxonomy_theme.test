@@ -1,0 +1,90 @@
+<?php
+
+class TaxonomyThemeWebTestCase extends DrupalWebTestCase {
+
+  protected $privileged_user;
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Taxonomy Theme test',
+      'description' => 'Test the taxonomy_theme module.',
+      'group' => 'Taxonomy Theme',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp('themekey', 'themekey_ui', 'taxonomy_theme');
+
+    $this->privileged_user = $this->drupalCreateUser(array(
+      'administer theme assignments', 'administer themekey settings',
+      'administer taxonomy theme', 'administer taxonomy',
+      'create article content', 'edit own article content',
+    ));
+    $this->drupalLogin($this->privileged_user);
+    theme_enable(array('garland'));
+  }
+
+  public function testVocabularyNodeTheme() {
+
+    $this->taxonomyThemeCreateNode();
+
+    // enable "Show theme option in create/edit taxonomy vocabulary forms"
+    $this->drupalPost('admin/config/user-interface/themekey/settings/ui', array('themekey_ui_vocabform' => 1), t('Save configuration'));
+    // enable "Tags" for vocab taxonomy theme
+    $this->drupalPost('admin/config/user-interface/themekey/settings/ui', array('themekey_ui_vocabform|1' => 1), t('Save configuration'));
+    
+    // taxonomy vocab: select theme
+    $this->drupalPost('admin/structure/taxonomy/tags/edit', array('themekey_ui_theme' => 'garland'), t('Save'));
+
+    $this->drupalGet('admin/structure/taxonomy/tags/edit');
+
+    // load node 1
+    $this->drupalGet('node/1');
+    // theme should be garland
+    $this->assertTheme('garland');
+  }
+
+  public function testTermNodeTheme() {
+    $this->taxonomyThemeCreateNode();
+
+    // enable "Show theme option in create/edit taxonomy term forms"
+    $this->drupalPost('admin/config/user-interface/themekey/settings/ui', array('themekey_ui_termform' => 1), t('Save configuration'));
+    // enable "Tags" for term taxonomy theme
+    $this->drupalPost('admin/config/user-interface/themekey/settings/ui', array('themekey_ui_termform|1' => 1), t('Save configuration'));
+
+    // taxonomy term 1: select theme
+    $this->drupalPost('taxonomy/term/1/edit', array('themekey_ui_theme' => 'garland'), t('Save'));
+
+    $this->drupalGet('taxonomy/term/1/edit');
+
+    // load node 1
+    $this->drupalGet('node/1');
+    // theme should be garland
+    $this->assertTheme('garland');
+    
+  }
+
+  /**
+   * add new article with a dummy tag and test if theme is bartik (default)
+   *
+   * @return void
+   */
+  function taxonomyThemeCreateNode() {
+    // add node with term
+    $this->drupalPost('node/add/article', array(
+      'title' => 'dummy',
+      'field_tags[und]' => 'dummy_tag',
+      'body[und][0][value]' => 'dummy'), t('Save'));
+
+    // load node 1
+    $this->drupalGet('node/1');
+    // theme is bartik
+    $this->assertTheme('bartik');
+
+  }
+
+  public function assertTheme($theme) {
+    $this->assertRaw('themes/' . $theme, 'current theme is ' . $theme);
+  }
+
+}

@@ -1,0 +1,150 @@
+<?php
+
+/**
+ * Implements hook_permission().
+ */
+function taxonomy_theme_permission() {
+  return array(
+    'administer taxonomy theme' => array(
+      'title' => t('administer taxonomy theme'),
+      'description' => t('Change theme for vocabularies and terms.'),
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function taxonomy_theme_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case 'taxonomy_form_term':
+    case 'taxonomy_form_vocabulary':
+      if (user_access('administer taxonomy theme')) {
+        module_load_include('inc', 'taxonomy_theme', 'taxonomy_theme_admin');
+        _taxonomy_theme_form_alter($form, $form_state, $form_id);
+      }
+      break;
+
+    case 'themekey_ui_settings_form':
+      if (user_access('administer themekey settings')) {
+        module_load_include('inc', 'taxonomy_theme', 'taxonomy_theme_admin');
+        taxonomy_theme_alter_themekey_ui_settings_form($form, $form_state, $form_id);
+      }
+      break;
+  }
+}
+
+
+/**
+ * Function taxonomy_theme_form_alter_submit().
+ */
+function taxonomy_theme_form_alter_submit($form, &$form_state) {
+   module_load_include('inc', 'taxonomy_theme', 'taxonomy_theme_admin');
+  _taxonomy_theme_form_alter_submit($form, $form_state);
+}
+
+
+/**
+ * Implements hook_themekey_properties().
+ *
+ * Provides additional properties for module ThemeKey:
+ *   taxonomy:theme_by_vocabulary
+ *   taxonomy:theme_by_term
+ *
+ * @return
+ *   array of themekey properties
+ */
+function taxonomy_theme_themekey_properties() {
+
+  // Attributes for properties
+  $attributes = array();
+
+  $attributes['taxonomy_theme:vocabulary_triggers_theme'] = array(
+    'description' => t("Property taxonomy_theme:vocabulary_triggers_theme could not be selected from the property drop down. You get this static property by activating !link. Afterwards you can move the property to any position in the rule chain. When done it triggers the switch to the theme assigned to a taxonomy vocabulary using Taxonomy Theme if the current page is associated with this vocabulary.",
+      array('!link' => l(t('Show theme option in create/edit taxonomy vocabulary forms'), 'admin/config/user-interface/themekey/settings/ui'))),
+    'static' => TRUE,
+  );
+
+  $attributes['taxonomy_theme:term_triggers_theme'] = array(
+    'description' => t("Property taxonomy_theme:term_triggers_theme could not be selected from the property drop down. You get this static property by activating !link. Afterwards you can move the property to any position in the rule chain. When done it triggers the switch to the theme assigned to a taxonomy term using Taxonomy Theme if the current page is associated with this term.",
+      array('!link' => l(t('Show theme option in create/edit taxonomy term forms'), 'admin/config/user-interface/themekey/settings/ui'))),
+    'static' => TRUE,
+  );
+
+
+  // Mapping functions
+  $maps = array();
+
+  $maps[] = array(
+    'src' => 'taxonomy:vid',
+    'dst' => 'taxonomy_theme:vocabulary_triggers_theme',
+    'callback' => 'taxonomy_theme_vid2theme',
+  );
+
+  $maps[] = array(
+    'src' => 'taxonomy:tid',
+    'dst' => 'taxonomy_theme:term_triggers_theme',
+    'callback' => 'taxonomy_theme_tid2theme',
+  );
+
+  return array('attributes' => $attributes, 'maps' => $maps);
+}
+
+/**
+ * Set custom theme from given vocabulary id (vid)
+ *
+ * @param  $vid vocabulary id
+ * @return null|string
+ */
+function taxonomy_theme_vid2theme($vid) {
+  $custom_theme = &drupal_static('themekey_custom_theme', '');
+
+  if ($theme = taxonomy_theme_get_theme_by_vid($vid)) {
+    if (themekey_check_theme_enabled($theme)) {
+      $custom_theme = $theme;
+      return 'static';
+    }
+  }
+
+  return NULL;
+}
+
+/**
+ * Set custom theme from given term id (tid)
+ *
+ * @param  $tid term id
+ * @return null|string
+ */
+function taxonomy_theme_tid2theme($tid) {
+  $custom_theme = &drupal_static('themekey_custom_theme', '');
+
+  if ($theme = taxonomy_theme_get_theme_by_tid($tid)) {
+    if (themekey_check_theme_enabled($theme)) {
+      $custom_theme = $theme;
+      return 'static';
+    }
+  }
+
+  return NULL;
+}
+
+/**
+ * get theme name from vocabulary id
+ *
+ * @param  $vid vocabulary id
+ * @return theme name
+ */
+function taxonomy_theme_get_theme_by_vid($vid) {
+  return db_select('taxonomy_theme_vids', 't')->fields('t', array('theme'))->condition('vid', $vid)->execute()->fetchField();
+}
+
+/**
+ * get theme name from term id
+ *
+ * @param  $tid term id
+ * @return theme name
+ */
+function taxonomy_theme_get_theme_by_tid($tid) {
+  return db_select('taxonomy_theme_tids', 't')->fields('t', array('theme'))->condition('tid', $tid)->execute()->fetchField();
+}

@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Database schema of
+ * @see taxonomy.module
+ *
+ * @author Markus Kalkbrenner | Cocomore AG
+ *   @see http://drupal.org/user/124705
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function taxonomy_theme_schema() {
+  $schema = array();
+
+  $schema['taxonomy_theme_vids'] = array(
+    'fields' => array(
+      'vid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Primary Key: The {taxonomy_vocabulary}.vid of the vocabulary to which the theme is assigned.',
+      ),
+      'theme' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('vid'),
+  );
+
+  $schema['taxonomy_theme_tids'] = array(
+    'fields' => array(
+      'tid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Primary Key: The {taxonomy_term_data}.tid of the term to which the theme is assigned.',
+      ),
+      'theme' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('tid'),
+  );
+
+  return $schema;
+}
+
+/**
+ * implements hook_install()
+ * @return void
+ */
+function taxonomy_theme_install() {
+  // rebuild themekey properties
+  module_load_include('inc', 'themekey', 'themekey_build');
+  themekey_rebuild();
+}
+
+
+/**
+ * Implements hook_disable().
+ */
+function taxonomy_theme_disable() {
+  module_load_include('inc', 'themekey', 'themekey_build');
+  themekey_update_static_rule('taxonomy_theme:vocabulary_triggers_theme', FALSE);
+  themekey_update_static_rule('taxonomy_theme:term_triggers_theme', FALSE);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function taxonomy_theme_uninstall() {
+  // Remove variables
+  db_delete('variable')
+  ->condition('name', 'themekey_ui_vocabform%%', 'LIKE')
+  ->execute();
+
+  db_delete('variable')
+  ->condition('name', 'themekey_ui_termform%%', 'LIKE')
+  ->execute();
+
+  cache_clear_all('variables', 'cache');
+}

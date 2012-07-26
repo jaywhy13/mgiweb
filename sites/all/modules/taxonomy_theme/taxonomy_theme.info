@@ -1,0 +1,20 @@
+
+name = "Taxonomy Theme"
+description = "User interface for mapping themes to Taxonomy vocabularies and terms"
+core = 7.x
+dependencies[] = themekey_ui
+dependencies[] = taxonomy
+package = ThemeKey
+configure = admin/config/user-interface/themekey/settings/ui
+
+files[] = taxonomy_theme.install
+files[] = taxonomy_theme.module
+files[] = taxonomy_theme_admin.inc
+files[] = tests/taxonomy_theme.test
+
+; Information added by drupal.org packaging script on 2011-02-25
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "taxonomy_theme"
+datestamp = "1298620363"
+
