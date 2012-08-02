@@ -1,0 +1,5 @@
+name= File Delete
+description= This module contains a cron to delete content of type File when their expirey has passed
+core=7.x
+dependencies[] = date
+dependencies[] = smtp

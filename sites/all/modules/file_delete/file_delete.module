@@ -1,0 +1,85 @@
+<?php
+
+	function file_delete_cron()
+	{
+		$today=time();
+		global $user;
+		$temp_user = $user;
+		
+		
+		$query=db_select('field_data_field_expirey_date','exp')
+		->fields('exp',array('entity_id','entity_type','field_expirey_date_value'))
+		->condition('entity_type','node','=')
+		->condition('field_expirey_date_value',$today,'<');
+		
+		$result=$query->execute();
+		$entity_id;
+		while($record = $result->fetchAssoc()) 
+		{
+			node_delete($record['entity_id']);
+			
+		}
+
+		$today = time();
+		$today = getdate($today);
+		
+		
+		$query=db_select('field_data_field_expirey_date','exp')
+		->fields('exp',array('entity_id','entity_type','field_expirey_date_value'))
+		->condition('entity_type','node','=');
+		
+		$result=$query->execute();
+		
+		while($record = $result->fetchAssoc()) 
+		{
+			$expDate = getdate($record['field_expirey_date_value']);
+			if ($expDate['yday'] == ($today['yday']+3) && $expDate['year'] <= $expDate['year'])
+			{
+				sendEmail($record['entity_id'], $expDate);
+				//node_delete($record['entity_id']);
+			}
+			if($expDate['year'] < $expDate['year'])
+			{
+				if((($expDate['yday']-3)%365) == $today['yday'])
+				{
+					sendEmail($record['entity_id'], $expDate);
+					//node_delete($record['entity_id']);
+				}
+			}
+		}
+
+
+		$user = $temp_user;
+		
+	}
+
+		function sendEmail($node_id, $expDate)
+	{
+		$query=db_select('node','nd')
+		->fields('nd',array('uid','nid', 'title'))
+		->condition('nid',$node_id,'=');
+		
+		$result=$query->execute();
+		
+		while($record = $result->fetchAssoc()) 
+		{
+			$query=db_select('users','usr')
+			->fields('usr',array('uid','mail'))
+			->condition('uid',$record['uid'],'=');
+			
+			$res =$query->execute();
+			while($rec = $res->fetchAssoc()) 
+			{
+				$mailer = new SmtpMailSystem();
+				$message['id'] = 1;
+				$message['to'] = $rec['mail'];
+				$message['subject'] =  "File Scheduled to be Deleted";
+				$message['body'] = $record['title'] . " Is about to be deleted on " . $expDate['month'] . " " . $expDate['mday'] . ", " . $expDate['year'];
+			
+				$mailer->mail($message);
+			}
+		}
+	}
+
+
+		
