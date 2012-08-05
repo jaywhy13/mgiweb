@@ -1,0 +1,132 @@
+/* CSS Document */
+
+#bg{
+ background-color:#FFF;
+ height:1620px;
+ width:1200px;
+}
+#topHalf{
+ height:578px;
+ width:1200px;
+ margin:1px;
+ background-color:#cfb38b;
+ border-bottom:1px;
+ border-bottom-color:#999
+}
+
+#bottomHalf{
+ height:977px;
+ width:1200px;
+ background-color:#FFF;
+ margin-left:20px;
+}
+#slideShow{
+ height:578px;
+ width:1200px;
+}
+
+#Logo{
+ height:85px;
+ width:450px;
+ background:rgb(192,192,192);
+ filter:alpha(opacity=40)
+ background:rgba(192,192,192, 0.3);
+}
+
+#menuBar{
+ height:85px;
+ background:rgb(211,211,211);
+ filter:alpha(opacity=40)
+ background:rgba(211,211,211, 0.3);
+ float:left;
+ margin-top:15px;
+ width:1200px;
+}
+
+#sideBarLeft{
+ height:977px;
+ width:295px;
+ background-color:#C00;
+ 
+ display:inline-block;
+ 
+}
+
+#sideBarRight{
+ height:977px;
+ width:293px;
+ background-color:#000;
+ display:inline-block;
+ 
+}
+
+#sideBarRight #block1{
+ height: 340px;
+ background-color:#333;
+}
+
+#sideBarRight #block2{
+ height: 320px;
+ background-color:#444;
+}
+
+#sideBarRight #block3{
+ height: 317px;
+ background-color:#555;
+}
+
+#sideBarLeft #block1{
+	height:307px;
+	background-color:#FFF;
+}
+
+#sideBarLeft #block2{
+	height:137px;
+	background-color:#B17;
+}
+
+#sideBarLeft #block3{
+	height:178px;
+	background-color:#B99;
+}
+
+#sideBarLeft #block4{
+	height:186px;
+	background-color:#B75;
+}
+
+#sideBarLeft #block5{
+	height:122px;
+	background-color:#B79;
+}
+
+.image{
+ 
+}
+
+#main{
+ height:977px;
+ width:570px;
+ background-color:#CFC;
+ position:relative;
+ display:inline-block;
+}
+
+#main #block1{
+ 
+}
+
+#main #block2{
+ 
+}
+
+#main #block3{
+ 
+}
+
+#footerMenu{
+ height:65px;
+ width:1200px;
+ background-color:#000;
+ 
+}

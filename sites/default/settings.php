@@ -209,7 +209,7 @@ $databases = array (
       'username' => 'evosys',
       'password' => 'password',
       'host' => 'localhost',
-      'port' => '5432',
+      'port' => '',
       'driver' => 'pgsql',
       'prefix' => '',
     ),
@@ -227,7 +227,7 @@ $databases = array (
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$update_free_access = true;
+$update_free_access = FALSE;
 
 /**
  * Salt for one-time login links and cancel links, form tokens, etc.
@@ -246,7 +246,7 @@ $update_free_access = true;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'JLCAmPnHTIPa12mjvnzzribQ4Ln-vj9dWTMTQjqLQYQ';
+$drupal_hash_salt = 'NjilFjYssmWBKAMH1mI3oXxP2esrcCU7d-q9mj3Osrs';
 
 /**
  * Base URL (optional).
@@ -524,9 +524,3 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
-
-$conf['background_process_service_hosts'] = array(
-  'default' => array(
-    'base_url' => 'http://192.168.1.3',
-    'http_host' => 'http://192.168.1.3',
-  ));
