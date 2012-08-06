@@ -1,6 +1,6 @@
 /* CSS Document */
 
-#bg{
+#widthManager{
  background-color:#FFF;
  height:1620px;
  width:1200px;
@@ -9,9 +9,8 @@
  height:578px;
  width:1200px;
  margin:1px;
- background-color:#cfb38b;
- border-bottom:1px;
- border-bottom-color:#999
+ border-bottom:1px #999 solid;
+
 }
 
 #bottomHalf{
@@ -25,32 +24,35 @@
  width:1200px;
 }
 
-#Logo{
+#logo{
  height:85px;
  width:450px;
- background:rgb(192,192,192);
- filter:alpha(opacity=40)
- background:rgba(192,192,192, 0.3);
+ opacity:1;
+ margin:10px;
 }
 
 #menuBar{
  height:85px;
- background:rgb(211,211,211);
- filter:alpha(opacity=40)
- background:rgba(211,211,211, 0.3);
- float:left;
+ position:absolute;
+ margin-left:1px;
+ background: transparent;
  margin-top:15px;
  width:1200px;
 }
 
-#sideBarLeft{
- height:977px;
- width:295px;
- background-color:#C00;
- 
- display:inline-block;
- 
-}
+#transparentBar
+{
+   height:85px;
+	 position:absolute;
+	 filter:Alpha(opacity=29);
+	 opacity:0.29;
+	 margin-left:1px;
+	 background: #ffffff;
+	 margin-top:15px;
+	 width:1200px;
+}	
+
+
 
 #sideBarRight{
  height:977px;
@@ -74,30 +76,38 @@
  height: 317px;
  background-color:#555;
 }
-
+#sideBarLeft{
+ height:977px;
+ width:295px;
+ background-color:#f7f8f8;
+ border-right: #c9c8c8 solid 3px;
+ display:inline-block;
+ margin-right:0;
+ 
+}
 #sideBarLeft #block1{
 	height:307px;
-	background-color:#FFF;
+//	background-color:#FFF;
 }
 
 #sideBarLeft #block2{
 	height:137px;
-	background-color:#B17;
+//	background-color:#B17;
 }
 
 #sideBarLeft #block3{
 	height:178px;
-	background-color:#B99;
+	//background-color:#B99;
 }
 
 #sideBarLeft #block4{
 	height:186px;
-	background-color:#B75;
+	//background-color:#B75;
 }
 
 #sideBarLeft #block5{
 	height:122px;
-	background-color:#B79;
+	//background-color:#B79;
 }
 
 .image{
@@ -110,6 +120,7 @@
  background-color:#CFC;
  position:relative;
  display:inline-block;
+ margin-left:0;
 }
 
 #main #block1{
