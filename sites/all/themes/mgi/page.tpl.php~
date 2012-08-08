@@ -9,9 +9,9 @@
 
 	<div id="widthManager">
         <div id="topHalf">
-		<div style='position:absolute;'>
+		
 	    	   <?php print render($page['bannerSlideshow'])?>
-		</div>
+		
 	
 	    <div id="transparentBar"></div>
             <div id="menuBar">
