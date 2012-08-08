@@ -9,7 +9,7 @@
 
 	<div id="widthManager">
         <div id="topHalf">
-		<div style='position:absolute;'>
+		<div id='slider'>
 	    	   <?php print render($page['bannerSlideshow'])?>
 		</div>
 	
@@ -26,11 +26,11 @@
         <div id="bottomHalf">
           
             
-          <div id="sideBarLeft">
+          <div id="sideBarLeft" class="gradient">
                 <?php print render($page['leftSideBar']) ?>
           </div>
             
-          <div id="main">
+          <div id="main" class="gradient">
                <?php print render($page['content'])?>
           </div>
           <div id="sideBarRight">

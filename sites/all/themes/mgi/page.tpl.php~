@@ -9,9 +9,9 @@
 
 	<div id="widthManager">
         <div id="topHalf">
-		
+		<div id='slider'>
 	    	   <?php print render($page['bannerSlideshow'])?>
-		
+		</div>
 	
 	    <div id="transparentBar"></div>
             <div id="menuBar">
