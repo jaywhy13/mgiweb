@@ -1,0 +1,122 @@
+#mainMenuBar
+{
+	height:20%;
+	width:100%;
+	background-color:white;
+	opacity:0.35;
+	filter:alpha(opacity=40);/*for IE*/
+	position: absolute;
+	top: 20px;
+	z-index:3;
+	
+}
+#menu
+{
+	float:right;
+}
+#banner
+{
+	height:35%;
+	width:100%;
+	
+	
+	
+}
+
+#slideshow
+{
+	position:relative;
+	background:url('region backgrounds/slideshowdummy.jpg') no-repeat;
+	height:100%;
+}
+
+body
+{
+	margin:0px;
+	height:1650px;
+	
+}
+
+
+#content-wrapper
+{
+	height:65%;
+	background-image:url('region backgrounds/contentwrap.jpg');
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;/*for firefox*/
+	background-repeat:no-repeat;
+}
+
+#leftSideBar
+{
+	height: 95%;
+	width: 25%;
+	//background-color:blue;
+	background-image:url('region backgrounds/leftsidebar.jpg');
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;/*for firefox*/
+	background-repeat:no-repeat;
+	//overflow:scroll;
+	float:left;
+	margin-top: 3%;
+}
+
+#content
+{
+	height: 95%;
+	width:45%; 
+	background-image:url('region backgrounds/center.jpg');
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;/*for firefox*/
+	background-repeat:no-repeat;
+	float:left;
+	position:relative;
+	margin-top:3%;
+	
+}
+
+#rightSideBar
+{
+	height:95%;
+	width:30%;
+	background-image:url('region backgrounds/rightsidebar.jpg');
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;/*for firefox*/
+	background-repeat:no-repeat;
+	float:right;
+	margin-top:3%;
+}
+#footer
+{
+	
+	width:100%;
+	height:5%;
+	float:right;
+	background-color:black;
+	
+	
+}
+
+.expanded .menu
+{
+	display:none;
+}
+
+.menu li
+{
+	display:inline;
+}
+	
+	
+	
+
+
+
+
+	
+
+
+	
+	
+	
+	
