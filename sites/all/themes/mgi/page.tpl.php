@@ -8,9 +8,9 @@
 	    <div id="transparentBar"></div>
             <div id="menuBar">
                 <div id="logo">
-			<img src='<?php print $logo?>'/>
+					<img src='<?php print $logo?>'/>
                 </div>
-		<?php print render($page['mainMenu'])?>
+				<?php print render($page['mainMenu'])?>
             </div>
 	    
         </div>
