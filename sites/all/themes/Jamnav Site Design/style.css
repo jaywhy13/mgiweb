@@ -1,13 +1,13 @@
 body {
 	margin:0;
 	//background:#000000;
-    overflow:hidden;
+
 }
 
 #widthManager {
 	background: url('images/background.png');
 	width:1240px;
-	height:100%;
+	height:800px;
 	margin:auto;
 	margin-top:0;
 	margin-bottom:0;
@@ -19,7 +19,7 @@ body {
 	width:302px;
 	height:95%;
 	background: url('images/asphalt.png');
-    display:inline-block;
+    float:left;
 }
 
 #logo{
@@ -33,13 +33,13 @@ body {
 	width: 40px;
 	height:95%;
 	background: url('images/divider.png');
-    display:inline-block;
+    float:left;
 }
 
 #content {
 	width: 880px;
-	display:inline;
-	position:absolute;
+	float:right;
+	d
 	margin-left:18px;
 	margin-top:50px;
 	color:#ffffff;
@@ -50,6 +50,7 @@ body {
 	background: #161412;
 	filter:Alpha(opacity=40);
 	opacity:0.4;
+	clear:both;
 	display:block;
 	height:5%;
 	margin:0;
