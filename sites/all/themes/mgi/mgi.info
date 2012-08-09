@@ -9,6 +9,7 @@ screenshot=theme.png
 engine = phptemplate
 
 stylesheets[all][] = style.css
+stylesheets[all][] = menu.css
 
 
 

@@ -10,7 +10,9 @@
                 <div id="logo">
 					<img src='<?php print $logo?>'/>
                 </div>
-				<?php print render($page['mainMenu'])?>
+				<div id="menu">
+					<?php print render($page['mainMenu'])?>
+			     </div>
             </div>
 	    
         </div>
