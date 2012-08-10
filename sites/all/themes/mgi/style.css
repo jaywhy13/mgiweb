@@ -19,7 +19,8 @@ body {
 }
 
 #bottomHalf{
- margin-top:50px;
+ background: rgb(250,251,251);
+ padding-top:50px;
  height:1027px;
  width:98%;
  background-color:#FFF;
@@ -79,6 +80,7 @@ body {
  float:left;
  overflow:hidden;
  padding-left:10px;
+ background:#fafbfb;
  
 }
 
@@ -195,6 +197,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fafbfb', e
 	text-decoration:none;
 }
 
+h2 {
+	color:#7acdee;
+}
 
 	
 	
