@@ -3,7 +3,9 @@
  * Widgets styles.
  */
 div.widgets-element-horizontal {
-  float: left; /* LTR */
+  float: right; /* LTR */
+  padding-right:15px;
+  padding-top:15px;
 }
 
 div.widgets-clear {

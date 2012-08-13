@@ -1,6 +1,7 @@
 /* CSS Document */
 body {
 	margin:0;
+   	font-family:helvetica;
 }
 #widthManager{
  background-color:#FFF;
@@ -201,5 +202,24 @@ h2 {
 	color:#7acdee;
 }
 
+
+#footerMenu .menu li {
+	list-style:none;
+	display:inline;
+	padding-right:15px;
+	
+}
+#footerMenu .menu li a {
+	color:white;
+}
+#footerMenu ul.menu {
+	padding-top:10px;
+	float:right;
+	padding-right:15px;
+}
+
+#footerMenu div {
+	display:inline;
+}
 	
 	

@@ -1,0 +1,12 @@
+
+/**
+ * Widgets styles.
+ */
+div.widgets-element-horizontal {
+  float: right; /* LTR */
+  padding-right:15px;
+}
+
+div.widgets-clear {
+  clear: both;
+}

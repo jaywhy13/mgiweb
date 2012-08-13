@@ -28,7 +28,7 @@ regions[bannerSlideshow]= Banner Slideshow
 
 regions[mainMenu] = Main Menu
 
-regions[footer] = footer
+regions[widgets] = Widgets
 
 regions[footerMenu] = Footer Menu
 
