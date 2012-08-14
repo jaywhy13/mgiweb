@@ -22,7 +22,7 @@ body {
 #bottomHalf{
  background: rgb(250,251,251);
  padding-top:50px;
- height:1027px;
+ min-height:1027px;
  width:98%;
  background-color:#FFF;
  margin-left:2%;
