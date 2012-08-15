@@ -13,8 +13,8 @@
 }
 
 .jcarousel-skin-default .jcarousel-container-horizontal {
-  width: 260px;
-  padding: 20px 30px;
+  width: auto;
+  padding: 20px 40px;
   margin: auto;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .jcarousel-skin-default .jcarousel-clip-horizontal {
-  width: 230px;
+  width: auto;
   overflow: hidden;
 }
 
@@ -37,7 +37,7 @@
 
 .jcarousel-skin-default .jcarousel-item {
   padding: 0;
-  width: 72px;
+  width: auto;
   overflow: hidden;
   list-style: none;
   background: #fff none;

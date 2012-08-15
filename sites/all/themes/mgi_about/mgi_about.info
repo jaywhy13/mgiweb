@@ -3,22 +3,29 @@ name = Mona GIS About
 description = The mona geoinformatics theme created by Danhue, Julian, Ritesh and Nicholas
 
 core = 7.x
-base = mgi
+base theme = mgi
 
 engine = phptemplate
 
+stylesheets[all][] = style.css
 
 regions[help] = help
 
-regions[leftSideBar] = Left Side Bar
+regions[quote] = Quote
 
-regions[content] = Content
+regions[leftTop] = Left Top Column
 
-regions[rightSideBar] = Right Side Bar 
+regions[rightTop] = Right Top Column
 
-regions[bannerSlideshow]= Banner Slideshow
+regions[bios]= Biographies
 
 regions[mainMenu] = Main Menu
+regions[content] = Content
+regions[about] = About
+
+regions[associates] = Associates
+
+regions[fellows] = Fellows
 
 regions[widgets] = Widgets
 

@@ -2,7 +2,7 @@
 	<div id="widthManager">
         <div id="topHalf">
 		<div id='slider'>
-	    	   <?php print render($page['bannerSlideshow'])?>
+	    	   <?php print render($page['quote'])?>
 		</div>
 	
 	    <div id="transparentBar"></div>
@@ -16,20 +16,31 @@
             </div>
 	    
         </div>
-        
+        <div id="mid" >
+			<div id="leftTop">
+				<?php print render($page['leftTop'])?>
+			</div>
+			<div id="rightTop">
+				<?php print render($page['rightTop'])?>
+			</div>
+		</div>
+		<div id="bios" > <?php print render($page['bios'])?></div>
+		
         <div id="bottomHalf">
-          
+          <div id = "about">
+			<?php print render($page['about'])?>
+		  </div>
+		  
+		  <div id="associates">
+				<?php print render($page['associates'])?>
+			</div>
+			
+		   <div id="fellows">
+				<?php print render($page['fellows'])?>
+		   </div>
             
-          <div id="sideBarLeft" class="gradient">
-                <?php print render($page['leftSideBar']) ?>
-          </div>
-            
-          <div id="main" class="gradient">
-               <?php print render($page['content'])?>
-          </div>
-          <div id="sideBarRight">
-                <?php print render($page['rightSideBar'])?>
-	  </div>
+
+
           </div>
           <div id="footerMenu">
 		<?php print render($page['footerMenu'])?>
