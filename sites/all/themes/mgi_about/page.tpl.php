@@ -24,7 +24,7 @@
 				<?php print render($page['rightTop'])?>
 			</div>
 		</div>
-		<div id="bios" > <?php print render($page['bios'])?></div>
+		<div id="bios" >  <div id="hiddenBios"><?php print render($page['biosViewer'])?></div><div id="biosViewer"></div><div id="biosScroller"><?php print render($page['biosScroller'])?></div></div>
 		
         <div id="bottomHalf">
           <div id = "about">

@@ -1,0 +1,1 @@
+<?	drupal_add_js("sites/all/themes/mgi_about/bios.js");

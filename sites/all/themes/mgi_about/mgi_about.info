@@ -16,8 +16,8 @@ regions[quote] = Quote
 regions[leftTop] = Left Top Column
 
 regions[rightTop] = Right Top Column
-
-regions[bios]= Biographies
+regions[biosViewer] = Biographies Viewer
+regions[biosScroller]= Biographies Scroller
 
 regions[mainMenu] = Main Menu
 regions[content] = Content

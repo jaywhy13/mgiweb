@@ -1,0 +1,149 @@
+
+/**
+ * A simple sample carousel skin.
+ *
+ * This skin includes a sample arrows.svg file that may be edited with the free
+ * illustration application InkScape (http://inkscape.org).
+ *
+ * CSS and icons by Nathan Haug.
+ */
+
+.jcarousel-skin-evosys {
+  text-align: center;
+}
+
+.jcarousel-skin-evosys .jcarousel-container-horizontal {
+  width: 260px;
+  padding: 20px 30px;
+  margin: auto;
+}
+
+.jcarousel-skin-evosys .jcarousel-container-vertical {
+  width: 102px;
+  height: 440px;
+  padding: 40px 20px;
+  margin: auto;
+}
+
+.jcarousel-skin-evosys .jcarousel-clip-horizontal {
+  width: 230px;
+  overflow: hidden;
+}
+
+.jcarousel-skin-evosys .jcarousel-clip-vertical {
+  height: 440px;
+  overflow: hidden;
+}
+
+.jcarousel-skin-evosys .jcarousel-item {
+  padding: 0;
+  width: 72px;
+  overflow: hidden;
+  list-style: none;
+  background: #fff none;
+}
+
+.jcarousel-skin-evosys .jcarousel-item-horizontal {
+  margin: 0 4px;
+}
+
+.jcarousel-skin-evosys .jcarousel-item-vertical {
+  margin: 4px 0;
+}
+
+.jcarousel-skin-evosys .jcarousel-item-placeholder {
+  background: #fff url(throbber.gif) no-repeat center center;
+  color: #000;
+}
+
+/**
+ * Buttons
+ */
+.jcarousel-skin-evosys .jcarousel-next,
+.jcarousel-skin-evosys .jcarousel-prev {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url(arrows.png);
+}
+
+.jcarousel-skin-evosys .jcarousel-next-disabled,
+.jcarousel-skin-evosys .jcarousel-prev-disabled {
+  display: none;
+}
+
+/**
+ * Horizontal Buttons
+ */
+.jcarousel-skin-evosys .jcarousel-prev-horizontal {
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  background-position: 0 0;
+}
+.jcarousel-skin-evosys .jcarousel-prev-horizontal:hover {
+  background-position: -32px 0;
+}
+.jcarousel-skin-evosys .jcarousel-prev-horizontal:active {
+  background-position: -64px 0;
+}
+
+.jcarousel-skin-evosys .jcarousel-next-horizontal {
+  position: absolute;
+  top: 55px;
+  right: 10px;
+  background-position: 0 -32px;
+}
+.jcarousel-skin-evosys .jcarousel-next-horizontal:hover {
+  background-position: -32px -32px;
+}
+.jcarousel-skin-evosys .jcarousel-next-horizontal:active {
+  background-position: -64px -32px;
+}
+
+/**
+ * Vertical Buttons
+ */
+.jcarousel-skin-evosys .jcarousel-prev-vertical {
+  position: absolute;
+  top: 10px;
+  left: 55px;
+  background-position: 0 -64px;
+}
+.jcarousel-skin-evosys .jcarousel-prev-vertical:hover {
+  background-position: -32px -64px;
+}
+.jcarousel-skin-evosys .jcarousel-prev-vertical:active {
+  background-position: -64px -64px;
+}
+
+.jcarousel-skin-evosys .jcarousel-next-vertical {
+  position: absolute;
+  bottom: 10px;
+  left: 55px;
+  background-position: 0 -96px;
+}
+.jcarousel-skin-evosys .jcarousel-next-vertical:hover {
+  background-position: -32px -96px;
+}
+.jcarousel-skin-evosys .jcarousel-next-vertical:active {
+  background-position: -64px -96px;
+}
+
+.jcarousel-skin-evosys .jcarousel-navigation {
+  margin: 0;
+  padding: 0;
+}
+
+.jcarousel-skin-evosys .jcarousel-navigation li {
+  display: inline;
+  margin: 0 2px 0 0;
+  padding: 0;
+  background: none;
+}
+
+.jcarousel-skin-evosys .jcarousel-navigation li.active a {
+  font-weight: bold;
+  text-decoration: none;
+}
+

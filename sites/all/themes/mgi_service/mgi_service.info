@@ -1,0 +1,25 @@
+name = Mona GIS Service
+
+description = The mona geoinformatics theme created by Danhue, Julian, Ritesh and Nicholas
+
+core = 7.x
+
+engine = phptemplate
+
+stylesheets[all][] = style.css
+stylesheets[all][] = menu.css
+
+regions[help] = help
+
+regions[services] = Services
+regions[service] = Service
+regions[subDeptMenu] = Sub Department Menu
+regions[subDept] = Sub Departments
+
+regions[mainMenu] = Main Menu
+
+regions[content] = Content
+
+regions[footerMenu] = Footer Menu
+
+regions[socialFeeds] = Social Feeds
