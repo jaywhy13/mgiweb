@@ -12,12 +12,12 @@ behavior:url("csshover2.htc");
 
 /* pull-down mainmenu css */
 #menuBar .menu{
-	float: right;
+	float: left;
 	width: 100%;
 	padding: 0;
 }
 #menuBar .menu ul {
-	float: right;
+	float: left;
 	width: 100%;
 	list-style: none;
 	line-height: 1;

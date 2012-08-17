@@ -3,7 +3,7 @@ name = Mona GIS About
 description = The mona geoinformatics theme created by Danhue, Julian, Ritesh and Nicholas
 
 core = 7.x
-base theme = mgi
+base theme = mgi_home
 
 engine = phptemplate
 

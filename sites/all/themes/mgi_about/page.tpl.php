@@ -8,7 +8,7 @@
 	    <div id="transparentBar"></div>
             <div id="menuBar">
                 <div id="logo">
-					<img src='<?php print $logo?>'/>
+						<a href='<?php echo $base_path;?>'><img src='<?php print $logo?>'/></a>
                 </div>
 				<div id="menu">
 					<?php print render($page['mainMenu'])?>

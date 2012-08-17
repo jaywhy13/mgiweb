@@ -1,35 +1,25 @@
-name = Mona GIS
+name = Mona GIS Base
 
 description = The mona geoinformatics theme created by Danhue, Julian, Ritesh and Nicholas
 
 core = 7.x
-
-screenshot=theme.png
 
 engine = phptemplate
 
 stylesheets[all][] = style.css
 stylesheets[all][] = menu.css
 
-
-
-
-
-
 regions[help] = help
 
-regions[leftSideBar] = Left Side Bar
+regions[services] = Services
 
-regions[content] = Content
+regions[leftColumn] = Left Column
 
-regions[rightSideBar] = Right Side Bar 
+regions[rightColumn] = Right Column
 
-regions[bannerSlideshow]= Banner Slideshow
 
 regions[mainMenu] = Main Menu
 
-regions[widgets] = Widgets
-
+regions[content] = Content
 regions[footerMenu] = Footer Menu
 
-regions[socialFeeds] = Social Feeds

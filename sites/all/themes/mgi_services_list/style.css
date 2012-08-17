@@ -235,3 +235,34 @@ h2 {
 }
 	
 	
+#footerMenu span {
+	float:left;
+	display:inline;
+	padding-top:25px;
+	padding-left:5px;
+}
+
+a.jcarousel-prev-horizontal {
+	background-image: url('images/arrowLeft.png') !important;
+	background-repeat: no-repeat;
+	height:100px !important;
+	width:40px !important;
+}
+
+a.jcarousel-prev-horizontal:hover {
+	background-position:0 0  !important;
+}
+
+
+a.jcarousel-next-horizontal {
+	background-image: url('images/arrowRight.png') !important;
+	background-repeat: no-repeat;
+	height:100px !important;
+	width:40px !important;
+	margin-left:100px !important;
+	background-position:0 0  !important;
+}
+
+a.jcarousel-next-horizontal:hover {
+	background-position:0 0  !important;
+}
