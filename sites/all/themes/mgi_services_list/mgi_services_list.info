@@ -16,7 +16,7 @@ regions[services] = Services
 regions[leftColumn] = Left Column
 
 regions[rightColumn] = Right Column
-
+regions[deptSummary] = Department Summaries
 
 regions[mainMenu] = Main Menu
 

@@ -25,7 +25,9 @@
 					<?php print render($page['rightColumn'])?>
 			</div>	
 		</div>
-
+		<div id="bottomHalf">
+			<?php print render($page['deptSummary'])?>
+		</div>
           <div id="footerMenu">
 
 				<?php print render($page['footerMenu'])?>

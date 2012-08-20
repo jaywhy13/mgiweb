@@ -43,7 +43,7 @@ body {
 #bottomHalf{
  background: rgb(250,251,251);
  padding-top:50px;
- min-height:595px;
+ min-height:auto;
  width:98%;
  background-color:#FFF;
  margin-left:2%;

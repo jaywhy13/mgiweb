@@ -99,7 +99,8 @@ behavior:url("csshover2.htc");
 #menuBar .menu li li:hover ul,
 #menuBar .menu li li li:hover ul,
 #menuBar .menu li li li li:hover ul,
-#menuBar .menu li li li li li:hover ul
+#menuBar .menu li li li li li:hover ul,
+#menuBar .menu li li.expanded
 {
 	left: auto;
 }
