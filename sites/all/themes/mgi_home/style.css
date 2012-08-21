@@ -1,14 +1,22 @@
 /* CSS Document */
 body {
-	margin:0;
+	margin-top:0;
    	font-family:helvetica;
 }
+
+.nivo-controlNav {
+ background-color:red;
+}
+
 #widthManager{
  background-color:#FFF;
  height:2220px;
- width:1250px;
- margin-right:auto;
- margin-left:auto;
+ width:960px;
+ border-left:1px solid #f00;
+ border-right:1px solid #f00;
+ margin:auto;
+ padding-top:0px;
+ display:block;
 }
 
 #topHalf{
@@ -177,6 +185,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fafbfb', e
 .frontPageNews h3 a{
 	color:#7acdee;
 	text-decoration:none;
+	font-size:0.8em;
 }
 .frontPageNews h3 a:hover {
 	text-decoration:underline;
@@ -189,13 +198,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fafbfb', e
 
 .frontPageNews span {
 	color:gray;
-	font-size:10px;
+	font-size:0.8em;
 	padding:0;
 	margin:0;
 	display:block;
 }
 
 .frontPageNews p {
+    font-size:0.8em;
 	color:#000000;
 	margin-top:5px;
 	margin-bottom:20px;
