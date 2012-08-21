@@ -254,11 +254,3 @@ h2 {
 	float:right;
 	margin-left:10px;
 }
-
-a:hover {
-	text-decoration:underline;
-}
-
-#backtotop{
-	display:none !important;
-}

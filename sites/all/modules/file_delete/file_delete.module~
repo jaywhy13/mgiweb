@@ -75,17 +75,11 @@
 				$message['to'] = $rec['mail'];
 				$message['subject'] =  "File Scheduled to be Deleted";
 				$message['body'] = $record['title'] . " Is about to be deleted on " . $expDate['month'] . " " . $expDate['mday'] . ", " . $expDate['year'];
-				//drupal_mail('file_delete', "", $message['to'], user_preferred_language($record['uid']));
+			
 				$mailer->mail($message);
 			}
 		}
 	}
 
-	function file_delete_mail($key, &$message, $params)
-	{
-		$message['to'] = $params['to'];
-		$message['subject'] = $params['subject'];
-		$message['body'] = $params['body'];
-	}
-			
+
 		

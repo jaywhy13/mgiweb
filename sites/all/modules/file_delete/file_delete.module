@@ -48,6 +48,8 @@
 			}
 		}
 
+		
+
 
 		$user = $temp_user;
 		
@@ -73,6 +75,32 @@
 				$mailer = new SmtpMailSystem();
 				$message['id'] = 1;
 				$message['to'] = $rec['mail'];
+				$message['subject'] =  "File Scheduled to be Deleted";
+				$message['body'] = $record['title'] . " Is about to be deleted on " . $expDate['month'] . " " . $expDate['mday'] . ", " . $expDate['year'];
+			
+				$mailer->mail($message);
+			}
+		}
+
+		$query=db_select('node','nd')
+		->fields('nd',array('uid','nid', 'title'))
+		->condition('nid',$node_id,'=');
+		
+		$result=$query->execute();
+		
+		while($record = $result->fetchAssoc()) 
+		{
+			$query=db_select('field_data_field_e_mail','em')
+			->fields('em',array('entity_type','entity_id', 'field_e_mail_value'))
+			->condition('entity_id',$node_id,'=')
+			->condition('entity_type', 'node', '=');
+			
+			$res =$query->execute();
+			while($rec = $res->fetchAssoc()) 
+			{
+				$mailer = new SmtpMailSystem();
+				$message['id'] = 1;
+				$message['to'] = $rec['field_e_mail_value'];
 				$message['subject'] =  "File Scheduled to be Deleted";
 				$message['body'] = $record['title'] . " Is about to be deleted on " . $expDate['month'] . " " . $expDate['mday'] . ", " . $expDate['year'];
 			

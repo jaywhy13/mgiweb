@@ -305,10 +305,3 @@ a.jcarousel-next-horizontal:hover {
 	vertical-align:bottom;
 }
 
-a:hover {
-	text-decoration:underline;
-}
-
-#backtotop{
-	display:none !important;
-}

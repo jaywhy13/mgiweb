@@ -11,7 +11,7 @@ stylesheets[all][] = menu.css
 
 regions[help] = help
 
-regions[quote] = Quotes
+
 
 regions[mainMenu] = Main Menu
 

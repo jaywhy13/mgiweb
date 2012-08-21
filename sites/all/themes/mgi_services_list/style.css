@@ -267,7 +267,51 @@ a.jcarousel-next-horizontal:hover {
 	background-position:0 0  !important;
 }
 
-.service {
-	margin-bottom:200px;
-	margin-top:100px;
+.subDepts {
+	margin-top:10px;
+	margin-bottom:10px;
 }
+
+.subDepts td {
+	width:300px;
+	padding-left:20px;
+	background: url('images/arrow.png') no-repeat;
+	background-position:right center;
+	margin-right:40px;
+	border:1px #cccccc solid;
+	height:20px;
+	
+}
+
+.subDepts a {
+	font-size:20px;
+}
+.subDepts a:hover {
+	text-decoration:underline;
+}
+
+
+
+.subDepts tr {
+	margin-bottom:10px;
+}
+
+.subDepts .description{
+	color:#9c9d9d;
+	font-size:16px;
+	text-align:justify;
+	margin-bottom:15px;
+}
+.description{
+	color:#9c9d9d;
+	font-size:16px;
+	text-align:justify;
+	margin:0;
+}
+
+h2.title {
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+

@@ -1,9 +1,7 @@
 
 	<div id="widthManager">
         <div id="topHalf">
-		<div id="quote">
-			<?php print render($page['quote'])?>
-		</div>
+		
 	
 	    <div id="transparentBar"></div>
             <div id="menuBar">

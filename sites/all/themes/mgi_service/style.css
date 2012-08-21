@@ -12,7 +12,7 @@ body {
 }
 
 #topHalf{
- height:445px;
+ height:245px;
  width:100%;
  margin:1px;
  background: #fdfdfd;
@@ -38,7 +38,7 @@ body {
 #bottomHalf{
  background: rgb(250,251,251);
  padding-top:50px;
- min-height:595px;
+ min-height:auto;
  width:98%;
  background-color:#FFF;
  margin-left:2%;
@@ -88,10 +88,10 @@ body {
 	 width:1250px;
 }	
 
-#services {
+#quote {
 	position:absolute;
 	width:1250px;
-	height:345px;
+	height:245px;
 	margin-top:100px;
 	background: #ffffff;
 }
@@ -177,3 +177,97 @@ h2 {
 	padding-left:5px;
 }
 
+h2.title {
+	text-transform:uppercase;
+}
+
+.description{
+	color:#9c9d9d;
+	font-size:16px;
+	text-align:justify;
+	margin-bottom:15px;
+}
+
+.articles {
+	padding-bottom:20px;
+	border-bottom:1px #cccccc solid;
+}
+.articles td, .subDepts td {
+	width:580px;
+	padding-left:20px;
+	margin-left:2.5%;
+	margin-right:2.5%;
+	border-right:1px solid #cccccc;
+	border-collapse:collapse;
+}
+
+.articles td.col-last , .subDepts  td.col-last {
+	border:none;
+}
+
+.articles .image {
+	float:left;
+	margin-right:15px;
+}
+
+.articles .description {
+	float:left;
+}
+
+.articles tr {
+	vertical-align:bottom;
+}
+
+
+.subDepts {
+	margin-top:20px;
+}
+
+.subDepts .subDepartmentRow {
+	background: #555351;
+	color:#ffffff;
+	
+}
+.subDepts tr {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.subDepts a {
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.subDepts div.articleList div div ul li, .subDepts div.articleList div div ul li a {
+	color:#7acdee;
+	font-size:14px;
+	font-weight:normal;
+}
+
+.subDepts a:hover {
+	text-decoration:underline;
+}
+
+.subDepts td.articleRow {
+	background-color:none;
+}
+
+.subDepts .articleRow a{
+	color:#7acdee;
+	font-size:14px;
+}
+
+.moreLink {
+	float:right;
+	padding-right:20px;
+	background:url('images/arrow.png') no-repeat;
+	background-position:right center;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+#backtotop{
+	display:none !important;
+}

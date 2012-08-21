@@ -283,11 +283,3 @@ h2 {
 	text-transform:uppercase;
 	color:#cccccc;
 }
-
-a:hover {
-	text-decoration:underline;
-}
-
-#backtotop{
-	display:none !important;
-}
