@@ -50,13 +50,13 @@ behavior:url("csshover2.htc");
 }
 
 #menuBar .menu li  {
-	float: left;
+	float: right;
 	margin:0;
 	padding:0;
 	list-style: none;
 }
 
-#menuBar .menu ul li {float:left; position:relative;  }
+#menuBar .menu ul li {float:right; position:relative;  }
 #menuBar .menu ul li a {white-space:nowrap;}
 	
 #menuBar .menu li ul {
