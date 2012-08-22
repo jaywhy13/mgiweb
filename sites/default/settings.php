@@ -206,8 +206,8 @@ $databases = array (
     'default' => 
     array (
       'database' => 'mgi',
-      'username' => 'evosys',
-      'password' => 'password',
+      'username' => 'jay',
+      'password' => 'jay',
       'host' => 'localhost',
       'port' => '5432',
       'driver' => 'pgsql',
