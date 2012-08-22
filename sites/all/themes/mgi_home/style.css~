@@ -84,7 +84,7 @@ body {
 
 
 #sideBarRight{
-/* height:1630px;*/
+ height:1630px;
  width:225px;
  float:left;
  overflow:hidden;
@@ -103,7 +103,7 @@ body {
 
 
 #sideBarLeft{
-	/*  height:1630px;*/
+	 height:1630px;
 	 padding-top:25px;
 	 width:226px;
 	 border-right: #c9c8c8 solid 1px;
@@ -120,7 +120,7 @@ body {
 
 
 #main{
-	/*  height:1630px;*/
+	  height:1630px;
 	 width:437px;
 	 position:relative;
 	 float:left;
