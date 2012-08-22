@@ -2,37 +2,38 @@
 body {
 	margin-top:0;
    	font-family:helvetica;
+	background: url('../tiles 3b.jpg');
 }
 
-.nivo-controlNav {
- background-color:red;
-}
+
 
 #widthManager{
  background-color:#FFF;
- height:2220px;
+ height:auto;
  width:960px;
- border-left:1px solid #f00;
- border-right:1px solid #f00;
  margin:auto;
  padding-top:0px;
  display:block;
 }
 
 #topHalf{
- height:578px;
+ height:445px;
  width:100%;
- margin:1px;
+ margin:0;
+ margin-bottom:1px;
+ 
  border-bottom:1px #999 solid;
 
 }
 
 #bottomHalf{
  background: rgb(250,251,251);
- min-height:1627px;
+ /*height:1630px;*/
  width:98%;
  background-color:#FFF;
  margin-left:2%;
+ border-right: 5px #ccc solid;
+ border-left: 5px #ccc solid; 
 }
 
 #slideShow{
@@ -42,7 +43,7 @@ body {
 
 #logo{
  height:85px;
- width:450px;
+ width:auto;
  opacity:1;
  margin:10px;
  float:left;
@@ -55,11 +56,11 @@ body {
  margin-left:1px;
  background: transparent;
  margin-top:15px;
- width:1250px;
+ width:960px;
  z-index:20;
 }
 #menu {
-   max-width:790px;
+   max-width:600px;
    width:auto;
    float:right;
    margin:0;
@@ -77,22 +78,21 @@ body {
 	 margin-left:1px;
 	 background: #ffffff;
 	 margin-top:15px;
-	 width:1250px;
+	 width:960px;
 }	
 
 
 
 #sideBarRight{
- height:1577px;
- width:293px;
+ height:1630px;
+ width:225px;
  float:left;
  overflow:hidden;
  padding-left:10px;
- background:#fafbfb;
- 
+ padding-top:25px;
 }
 #sideBarRight h2, #sideBarRight h2 a  {
-	line-height:0.7;
+	line-height:0.8;
 
 	color:#7acdee;
 }
@@ -103,8 +103,9 @@ body {
 
 
 #sideBarLeft{
-	  height:1577px;
-	 width:295px;
+	 height:1630px;
+	 padding-top:25px;
+	 width:226px;
 	 border-right: #c9c8c8 solid 1px;
 	 float:left;
 	 margin-right:0;
@@ -113,25 +114,28 @@ body {
 
 #slider {
 	position:absolute;
-	width:1250px;
-	height:589px;
+	width:960px;
+	height:445px;
 }
 
 
 #main{
-	  height:1577px;
-	 width:570px;
+	  height:1630px;
+	 width:437px;
 	 position:relative;
 	 float:left;
 	 border-right: #c9c8c8 solid 1px;
-	 margin-left:5px;
+	 padding-left:5px;
+	 padding-right:5px;
    overflow:hidden;
 }
 
 
 #footerMenu{
  height:65px;
- width:1250px;
+ 
+ clear:both;
+ width:960px;
  background-color:#000;
  
 }
@@ -153,15 +157,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fafbfb', e
 }
 .sideVids img, .sideVids td
 {
-	width:140px;
-	height:95px;
+	width:106px;
+	height:72px;
 }
 
 .sideVids td
 {
-	width:145px;
-	height:95px;
-	padding:0;
+	padding-right:10px;
+	padding-bottom:10px;
  	margin-right:3px;
   	border:0;
 }
@@ -268,33 +271,36 @@ h2 {
 }
 
 .fpDept {
-	height:170px;
+	height:120px;
 	background: url('images/bubble.png') no-repeat #f5f5f5;
 	background-position: left bottom;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 .fpDept img {
 	padding-left:17px;
+	padding-bottom:10px;
 }
 
 .fpDept span.fpDeptName {
 	margin-left:35px;
 	margin-top:15px;
-	margin-right:25px;
 	float:left;
-	width:180px;
-	padding-right:20px;
+	margin-right:5px;
 	background: url('images/arrow.png') no-repeat;
 	background-position: right center;
-	
-	
-}
-.fpDept span.fpDeptName a, #sideBarLeft h2 {
-	font-size:17px;
-	text-transform:uppercase;
-	color:#cccccc;
+	width:153px;	
 }
 
-<<<<<<< HEAD
+	
+.fpDept span.fpDeptName a, #sideBarLeft h2 {
+	font-size:12px;
+	text-transform:uppercase;
+	color:#cccccc;
+	font-weight:bold
+}
+
+
 a:hover {
 	text-decoration:underline;
 }
@@ -302,13 +308,14 @@ a:hover {
 #backtotop{
 	display:none !important;
 }
-=======
+
 
 #sideBarLeft table.views-view-grid
 {	
 	border-collapse:separate;
 	border-spacing:10px;
-	width:260px;
+	width:120px;
+	margin-bottom:20px;
 
 }
 
@@ -331,4 +338,7 @@ a:hover {
 	
 }
 
->>>>>>> fbaa5dff1e8dd3c6d4b3af31637d93cc6211e9be
+/*>>>>>>> fbaa5dff1e8dd3c6d4b3af31637d93cc6211e9be*/
+
+
+

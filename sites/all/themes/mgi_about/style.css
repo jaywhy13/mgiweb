@@ -5,8 +5,8 @@ body {
 }
 #widthManager{
  background-color:#FFF;
- height:1620px;
- width:1250px;
+ height:auto;
+ width:960px;
  margin-right:auto;
  margin-left:auto;
 }
@@ -36,14 +36,14 @@ body {
 }
 
 #bios {
-	height:	385px;
+	height:	395px;
 	width:100%;
 	background: #d9d9d8;
 }
 
 #biosViewer {
 	height:280px;
-	width:1230px;
+	width:940px;
 	background: #d9d9d8;
 	display:block;
 	margin:0;
@@ -63,14 +63,14 @@ body {
 
 #biosViewer	.biosDescription {
 	text-align:justify;
-	width:80%;
+	width:70%;
 	float:left;
 	margin-top:50px;
 	display:inline;
 }
 	
 #biosScroller{
-	height:85px;
+	height:95px;
 	width:100%;
 	background:#1b1a1a;
 	display:block;
@@ -108,7 +108,7 @@ body {
 }
 #logo{
  height:85px;
- width:450px;
+ width:auto;
  opacity:1;
  margin:10px;
  float:left;
@@ -121,11 +121,11 @@ body {
  margin-left:1px;
  background: transparent;
  margin-top:15px;
- width:1250px;
+ width:960px;
  z-index:20;
 }
 #menu {
-   max-width:790px;
+   max-width:600px;
    width:auto;
    float:right;
    margin:0;
@@ -142,12 +142,12 @@ body {
 	 margin-left:1px;
 	 background: #f8f8f8;
 	 margin-top:15px;
-	 width:1250px;
+	 width:960px;
 }	
 
 #slider {
 	position:absolute;
-	width:1250px;
+	width:960px;
 	height:345px;
 	margin-top:100px;
 	background: #ffffff;
@@ -156,13 +156,13 @@ body {
 #leftTop {
 	margin-left:50px;
 	margin-top:30px;
-	width:550px;
+	width:430px;
 	float:left;
 }
 #rightTop {
 	margin-left:50px;
 	margin-top:30px;
-	width:550px;
+	width:430px;
 	float:right;
 }
 
@@ -174,11 +174,11 @@ body {
 #about .abtButton {
 	background: #f9fcfc url('images/arrows.png') no-repeat;
 	background-position: right center;
-	padding-right: 100px;
+	padding-right: 50px;
 	padding-bottom:10px;
 	vertical-align:middle;
 	margin-bottom:10px;
-	width:400px;
+	width:300px;
 	margin-right:100px;
 	border: 1px solid #e0e1e1;
 	
@@ -189,7 +189,7 @@ body {
 	margin-top:5px;
 }
 #associates {
-	width:460px;
+	width:300px;
 	margin-left:50px;
 	padding-right:100px;
 	float:left;
@@ -204,11 +204,11 @@ body {
 #fellows {
 	float:right;
 	margin-left:50px;
-	width:550px;
+	width:400px;
 }
 
 #fellows td {
-	padding-right:50px;
+	padding-right:20px;
 }
 #fellows tr {
 	vertical-align:top;

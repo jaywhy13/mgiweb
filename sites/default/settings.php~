@@ -206,11 +206,11 @@ $databases = array (
     'default' => 
     array (
       'database' => 'mgi',
-      'username' => 'root',
+      'username' => 'evosys',
       'password' => 'password',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
+      'host' => '10.0.41.188',
+      'port' => '5432',
+      'driver' => 'pgsql',
       'prefix' => '',
     ),
   ),
@@ -246,7 +246,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'NjilFjYssmWBKAMH1mI3oXxP2esrcCU7d-q9mj3Osrs';
+$drupal_hash_salt = 'yxm7xwkD0o0FCsO0E0_M2XtfOgXaLxPwSwslyyeP6AY';
 
 /**
  * Base URL (optional).

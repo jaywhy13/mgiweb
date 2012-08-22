@@ -30,7 +30,7 @@
           <div id="sideBarRight">
                 <?php print render($page['rightSideBar'])?>
 	  </div>
-          </div>
+       </div>
           <div id="footerMenu">
 		<?php print render($page['footerMenu'])?>
           </div>

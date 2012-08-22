@@ -6,7 +6,7 @@ body {
 #widthManager{
  background-color:#FFF;
  height:auto;
- width:1250px;
+ width:960px;
  margin-right:auto;
  margin-left:auto;
 }
@@ -34,11 +34,7 @@ body {
 
 }
 
-#bios {
-	height:	385px;
-	width:100%;
-	background: #d9d9d8;
-}
+
 
 #bottomHalf{
  background: rgb(250,251,251);
@@ -65,7 +61,7 @@ body {
 }
 #logo{
  height:85px;
- width:450px;
+ width:auto;
  opacity:1;
  margin:10px;
  float:left;
@@ -78,11 +74,11 @@ body {
  margin-left:1px;
  background: transparent;
  margin-top:15px;
- width:1250px;
+ width:960px;
  z-index:20;
 }
 #menu {
-   max-width:790px;
+   max-width:600px;
    width:auto;
    float:right;
    margin:0;
@@ -95,16 +91,19 @@ body {
    height:85px;
    z-index:19;
 	 position:absolute;
-
+	 filter:Alpha(opacity=29);
+	 opacity:0.29;
 	 margin-left:1px;
-	 background: #f8f8f8;
+	 background: #ffffff;
 	 margin-top:15px;
-	 width:1250px;
+	 width:960px;
 }	
+
+
 
 #slider {
 	position:absolute;
-	width:1250px;
+	width:940px;
 	height:345px;
 	margin-top:100px;
 	background: #ffffff;
@@ -127,7 +126,7 @@ body {
 
 #footerMenu{
  height:65px;
- width:1250px;
+ width:100%;
  background-color:#000;
  
 }
@@ -209,7 +208,9 @@ background: #e7e7e7; /* Old browsers */
 	color: #7acdee;
 	text-decoration:none;
 }
-
+a:hover {
+	text-decoration:underline;
+}
 h2 {
 	color:#7acdee;
 }
@@ -306,7 +307,7 @@ a.jcarousel-next-horizontal:hover {
 	color:#9c9d9d;
 	font-size:16px;
 	text-align:justify;
-	margin-bottom:15px;
+	margin:0;
 }
 
 h2.title {
@@ -314,4 +315,6 @@ h2.title {
 	padding-bottom:0;
 }
 
-
+p {
+	color:#787979;
+}
