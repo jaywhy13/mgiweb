@@ -21,7 +21,7 @@ body {
 }
 #mid {
 	width:100%;
-	height:300px;
+	height:auto;
 	background: #e7e7e7; /* Old browsers */
 	background: -moz-linear-gradient(top,  #e7e7e7 49%, #fefefe 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(49%,#e7e7e7), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
@@ -279,6 +279,7 @@ a.jcarousel-next-horizontal:hover {
 	background: url('images/arrow.png') no-repeat;
 	background-position:right center;
 	margin-right:40px;
+	padding-right:10px;
 	border:1px #cccccc solid;
 	height:20px;
 	
@@ -291,6 +292,10 @@ a.jcarousel-next-horizontal:hover {
 	text-decoration:underline;
 }
 
+.subDepartmentList table {
+	border-collapse: separate;
+	border-spacing: 10px;
+}
 
 
 .subDepts tr {
