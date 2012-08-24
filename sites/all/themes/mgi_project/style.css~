@@ -2,6 +2,7 @@
 body {
 	margin:0;
    	font-family:helvetica;
+	background: url('../tiles 3b.jpg');
 }
 #widthManager{
  background-color:#FFF;
@@ -82,7 +83,6 @@ body {
 
 #menuBar{
  height:85px;
- position:absolute;
  margin-left:1px;
  background: transparent;
  margin-top:15px;
@@ -113,7 +113,7 @@ body {
 
 #slider {
 	position:absolute;
-	width:100%;
+	width:960px;
 	height:145px;
 	margin-top:100px;
 	background: #ffffff;

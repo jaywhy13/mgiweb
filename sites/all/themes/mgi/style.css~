@@ -2,6 +2,7 @@
 body {
 	margin:0;
    	font-family:helvetica;
+	background: url('../tiles 3b.jpg');
 }
 #widthManager{
  background-color:#FFF;
@@ -12,7 +13,8 @@ body {
 }
 
 #topHalf{
- height:245px;
+ min-height:100px;
+ max-height:245px;
  width:100%;
  margin:1px;
  background: #fdfdfd;
@@ -42,19 +44,12 @@ body {
  
  height:auto;
  width:860px;
- background-color:#FFF;
- 	background: #e7e7e7; /* Old browsers */
-	background: -moz-linear-gradient(top,  #e7e7e7 49%, #fefefe 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(49%,#e7e7e7), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #e7e7e7 49%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #e7e7e7 49%,#fefefe 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #e7e7e7 49%,#fefefe 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #e7e7e7 49%,#fefefe 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+
 }
 
 #bottomHalf p, #bottomHalf  {
-	font-size:10px;
+	font-size:12px;
+	
 }
 
 #slideShow{
@@ -133,21 +128,7 @@ body {
  
 }
 
-/*Gradient*/
-.gradient {
-background: #e7e7e7; /* Old browsers */
-	background: -moz-linear-gradient(top,  #e7e7e7 49%, #fefefe 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(49%,#e7e7e7), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #e7e7e7 49%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #e7e7e7 49%,#fefefe 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #e7e7e7 49%,#fefefe 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #e7e7e7 49%,#fefefe 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
 
-
-
-
-}
 .sideVids img, .sideVids td
 {
 	width:140px;

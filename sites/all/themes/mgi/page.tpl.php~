@@ -17,7 +17,8 @@
 	    
         </div>
 		<div id="bottomHalf" class="gradient"> 
-				<h2 class="pageTitle" ><?php print render($tabs); print $title ?> </h2>
+				<?php print render($tabs);?>
+				<h2 class="pageTitle" ><?php print $title ?> </h2>
 				<?php print render($page['content'])?>
 		</div>
 

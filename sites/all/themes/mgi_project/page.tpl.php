@@ -1,9 +1,7 @@
 
 	<div id="widthManager">
         <div id="topHalf">
-		<div id='slider'>
-	    	   <?php print render($page['services'])?>
-		</div>
+
 	
 	    <div id="transparentBar"></div>
             <div id="menuBar">
