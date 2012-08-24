@@ -14,6 +14,9 @@ body {
  margin:auto;
  padding-top:0px;
  display:block;
+ border-right: 3px solid #7acdee;
+ border-left: 3px solid #7acdee;
+
 }
 
 #topHalf{
@@ -116,19 +119,22 @@ body {
 	position:absolute;
 	width:960px;
 	height:445px;
+	overflow:hidden;
 }
 
 
 #main{
-	  height:1630px;
+	  height:1655px;
 	 width:437px;
 	 position:relative;
 	 float:left;
 	 border-right: #c9c8c8 solid 1px;
-	 padding-left:5px;
-	 padding-right:5px;
+	 padding-left:10px;
+	 padding-right:10px;
+	 
    overflow:hidden;
 }
+
 
 
 #footerMenu{
@@ -212,6 +218,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fafbfb', e
 	color:#000000;
 	margin-top:5px;
 	margin-bottom:20px;
+	text-align:justify;
 }
 
 .frontPageNews p a {
@@ -276,10 +283,16 @@ h2 {
 	background-position: left bottom;
 	margin-top:10px;
 	margin-bottom:10px;
+	-webkit-box-shadow:  2px 2px 4px 4px #999966;        
+        box-shadow:  2px 2px 4px 4px #999966;
+	-webkit-border-radius: 10px;   
+  	border-radius: 5px;
+	overflow:hidden;
 }
 .fpDept img {
 	padding-left:17px;
 	padding-bottom:10px;
+	padding-top:5px;
 }
 
 .fpDept span.fpDeptName {
@@ -296,7 +309,6 @@ h2 {
 .fpDept span.fpDeptName a, #sideBarLeft h2 {
 	font-size:12px;
 	text-transform:uppercase;
-	color:#cccccc;
 	font-weight:bold
 }
 

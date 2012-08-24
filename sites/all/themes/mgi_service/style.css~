@@ -2,6 +2,7 @@
 body {
 	margin:0;
    	font-family:helvetica;
+	background: url('../tiles 3b.jpg');
 }
 #widthManager{
  background-color:#FFF;
@@ -12,7 +13,8 @@ body {
 }
 
 #topHalf{
- height:245px;
+ min-height:100px;
+ max-height:245px;
  width:100%;
  margin:1px;
  background: #fdfdfd;
@@ -60,12 +62,11 @@ body {
 
 #menuBar{
  height:85px;
- position:absolute;
  margin-left:1px;
  background: transparent;
  margin-top:15px;
  width:960px;
- z-index:20;
+ z-index:50;
 }
 #menu {
    max-width:600px;
@@ -90,11 +91,11 @@ body {
 }	
 
 #quote {
-	position:absolute;
-	width:1250px;
-	height:145px;
-	margin-top:100px;
-	background: #ffffff;
+	width: 1250px;
+	clear: both;
+	height: auto;
+	max-height: 145px;
+	background: white;
 }
 
 #service {
@@ -205,8 +206,25 @@ h2.title {
 .articles tr {
 	vertical-align:bottom;
 }
+.subDepts .title {
+	background: #555351;
+	padding-right: 50px;
+	padding-bottom:10px;
+	padding-top:10px;
+	padding-left:20px;
+	vertical-align:middle;
+	margin-bottom:10px;
+	width:300px;
+	margin-right:100px;
+	border: 1px solid #e0e1e1;
+}
 
-
+.subDepts .title a {
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+}
+/*
 .subDepts {
 	margin-top:20px;
 }
@@ -243,7 +261,7 @@ h2.title {
 .subDepts .articleRow a{
 	color:#7acdee;
 	font-size:14px;
-}
+}*/
 
 .moreLink {
 	float:right;
@@ -262,4 +280,5 @@ a:hover {
 
 p {
 	color:#787979;
+/*  444646 = darker for important*/
 }

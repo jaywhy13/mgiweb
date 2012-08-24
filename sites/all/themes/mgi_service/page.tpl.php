@@ -1,11 +1,9 @@
 
 	<div id="widthManager">
         <div id="topHalf">
-		<div id="quote">
-			<?php print render($page['quote'])?>
-		</div>
 	
-	    <div id="transparentBar"></div>
+	
+	   
             <div id="menuBar">
                 <div id="logo">
 					<a href='<?php echo $base_path;?>'>	<img src='<?php print $logo?>'/></a>
@@ -14,6 +12,9 @@
 					<?php print render($page['mainMenu'])?>
 			     </div>
             </div>
+	   	<div id="quote">
+			<?php print render($page['quote'])?>
+		</div>
 	    
         </div>
 		<div id="bottomHalf" class="gradient"> 

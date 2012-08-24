@@ -64,7 +64,7 @@ behavior:url("csshover2.htc");
 	left: -999em;
 	height: auto;
 	width:17em;	
-	
+	z-index:20;
 	background: url('images/transparent.png');
 	
 	font-weight: normal;
@@ -82,7 +82,6 @@ behavior:url("csshover2.htc");
 
 #menuBar .menu li ul  {
 	margin: 0;
-	z-index:20;
 }
 #menuBar .menu li ul ul {
 	margin: -2.8em 0 0 13.5em;
