@@ -575,10 +575,12 @@ function _workbench_moderation_access_current_draft($node) {
   }
 
   $state = $node->workbench_moderation;
-  return (_workbench_moderation_access('view revisions', $node)
+  /*return (_workbench_moderation_access('view revisions', $node)
+      && !empty($state['published'])
+      && $state['published']->vid != $state['current']->vid);*/
+return (user_access('view revisions')
       && !empty($state['published'])
       && $state['published']->vid != $state['current']->vid);
-
 }
 
 /**
