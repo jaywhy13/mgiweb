@@ -1,25 +1,39 @@
-name = Mona GIS Base
+name = MGI
 
-description = The mona geoinformatics theme created by Danhue, Julian, Ritesh and Nicholas
+description = Mona Geoinformatics Theme. Created by Ritesh Reddy, Danhue Moodie, Nicholas Rance and Julian Ingledew. Designed By Dominique Thompson.
 
 core = 7.x
 
 engine = phptemplate
 
-stylesheets[all][] = style.css
-stylesheets[all][] = menu.css
+screenshot = screenshot.png
+
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/menu.css
+
+
 
 regions[help] = help
 
-regions[services] = Services
-
-regions[leftColumn] = Left Column
-
-regions[rightColumn] = Right Column
-
-
+;General Regions
 regions[mainMenu] = Main Menu
-
 regions[content] = Content
-regions[footerMenu] = Footer Menu
+regions[footer] = Footer
 
+;Home Page Regions
+regions[slider] = Top Slider 
+regions[leftSideBar] = Left Side Bar
+regions[rightSideBar] = Right Side Bar
+
+
+;Service Listing Page
+regions[leftColumn] = Left Column 
+regions[rightColumn] = Right Column
+regions[deptSummaries] = Department Summaries
+
+;About Page
+regions[biosViewer] = Bios Viewer
+regions[biosScroller] = Bios Scroller
+regions[about] = About 
+regions[associates] = Associates
+regions[fellows] = Fellows

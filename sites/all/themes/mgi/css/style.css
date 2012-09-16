@@ -1,0 +1,649 @@
+/* CSS Document */
+/*The Document is split it up into various sections
+0 - General 
+1 - Home Page
+2 - Services (Service Listing)
+3 - Service Page
+4 - Training Page
+5 - Projects Page
+6 - About Page
+7 - Gallery
+*/
+
+/* 0 - General CSS Start */
+
+body {
+	margin:0;
+   	font-family:helvetica;
+	background: url('../images/background.jpg');
+}
+
+
+a {
+	color: #7acdee;
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+h2 {
+	color: #7acdee;
+}
+
+#widthManager{
+	background:#FDFDFD;
+	height:auto;
+	width:960px;
+	margin:auto;
+	margin-top:0px;
+	padding-top:0px;
+	display:block;
+	border-right: 1px solid #7acdee;
+	border-left: 1px solid #7acdee;
+}
+
+#logo{
+	height:85px;
+	width:auto;
+	opacity:1;
+	margin:10px;
+	float:left;
+	display:inline;
+	z-index:2;
+}
+
+#menuBar{
+	height:85px;
+	margin-left:1px;
+	background: url('../images/menuTransperancy.png') repeat-x;
+	margin-top:15px;
+	width:960px;
+	z-index:50;
+	position:relative;
+}
+#menu {
+	max-width:600px;
+	width:auto;
+	float:right;
+	margin:0;
+	padding:0;
+	margin-left:10px;
+	display:inline;
+}
+#transparentBar
+{
+	height:85px;
+	display:block;
+	filter:Alpha(opacity=29);
+	opacity:0.29;
+	margin-left:1px;
+	background: #ffffff;
+	margin-top:15px;
+	width:960px;
+}
+
+#content {
+	background: rgb(250,251,251);
+	padding:50px;
+	height:auto;
+	width:860px;
+}
+
+#footer{
+	height:50px;
+	width:100%;
+	background-color:#000;
+	clear:both;
+ }
+ 
+ 
+#footer .menu li {
+	list-style:none;
+	display:inline;
+	padding-right:15px;
+	
+}
+#footer .menu li a {
+	color:white;
+}
+#footer ul.menu {
+
+	float:right;
+	padding-right:15px;
+}
+
+#footer div {
+	display:inline;
+	margin-top:-5px;
+}
+	
+	
+#footer span {
+	float:left;
+	display:inline;
+	padding-top:15px;
+	padding-left:5px;
+}
+
+/*0-General CSS END */
+
+/*1 - Home Page CSS BEGIN */
+
+#slider {
+	width:960px;
+	height:445px;
+	margin-top:-100px;
+	background: #ffffff;
+	position:relative;
+	overflow:hidden;
+}
+
+.gradient {
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI0NiUiIHN0b3AtY29sb3I9IiNmYWZiZmIiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjY5JSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIgc3RvcC1vcGFjaXR5PSIwLjQiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjZjlmOWY5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5ZjlmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(left,  rgba(250,251,251,0.4) 46%, rgba(250,250,250,0.4) 69%, rgba(241,242,242,1) 99%, rgba(238,239,239,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(46%,rgba(250,251,251,0.4)), color-stop(69%,rgba(241,242,242,0.4)), color-stop(99%,rgba(238,239,239,1)), color-stop(100%,rgba(249,249,249,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(250,251,251,0.4) 46%,rgba(250,250,250,0.4) 90%,rgba(241,242,242,1) 99%,rgba(238,239,239,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(250,251,251,0.4) 46%,rgba(250,250,250,0.4) 69%,rgba(241,242,242,1) 99%,rgba(238,239,239,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(250,251,251,0.4) 46%,rgba(250,250,250,0.4) 69%,rgba(241,242,242,1) 99%,rgba(238,239,239,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(250,251,251,0.4) 46%,rgba(250,250,250,0.4) 69%,rgba(241,242,242,1) 99%,rgba(238,239,239,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fafbfb', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-8 */
+}
+
+#sideBarRight{
+    height:1630px;
+	width:225px;
+	float:left;
+	overflow:hidden;
+	padding-left:10px;
+	padding-top:25px;
+}
+
+#sideBarRight h2, #sideBarRight h2 a  {
+	line-height:0.8;
+
+	color:#7acdee;
+}
+#sideBarRight p {
+	font-size:12px;
+	margin-top:0;
+}
+
+
+#sideBarLeft{
+	clear:both;
+	height:1630px;
+	padding-top:25px;
+	width:226px;
+	margin-left:20px;
+	border-right: #c9c8c8 solid 1px;
+	float:left;
+	margin-right:0;
+	overflow:hidden;
+}
+
+#mid{
+	height:1655px;
+	width:437px;
+	position:relative;
+	float:left;
+	border-right: #c9c8c8 solid 1px;
+	padding-left:10px;
+	padding-right:10px;
+	overflow:hidden;
+}
+
+.sideVids img, .sideVids td
+{
+	width:106px;
+	height:72px;
+}
+
+.sideVids td
+{
+	padding-right:10px;
+	padding-bottom:10px;
+ 	margin-right:3px;
+  	border:0;
+}
+
+
+.sideVids tr
+{
+  padding:0;
+}
+
+.recentBlog a
+{
+	text-decoration:none;
+	color:#000000;
+	font-size:12px;
+	line-height:100%;
+}
+.frontPageNews div {
+	display:inline;
+}
+.frontPageNews h3 a{
+	color:#7acdee;
+	text-decoration:none;
+	font-size:0.8em;
+}
+.frontPageNews h3 a:hover {
+	text-decoration:underline;
+}
+.frontPageNews h3 {
+	margin-bottom:0px;
+	padding-bottom:0px;
+	margin-top:30px;
+}
+
+.frontPageNews span {
+	color:gray;
+	font-size:0.8em;
+	padding:0;
+	margin:0;
+	display:block;
+}
+
+.frontPageNews p {
+    font-size:0.8em;
+	color:#000000;
+	margin-top:5px;
+	margin-bottom:20px;
+	text-align:justify;
+}
+
+.frontPageNews p a {
+	color: #7acdee;
+	text-decoration:none;
+}
+
+.fpDept {
+	height:120px;
+	background: url('../images/bubble.png') no-repeat #f5f5f5;
+	background-position: left bottom;
+	margin-top:10px;
+	margin-bottom:10px;
+	-webkit-box-shadow:  2px 2px 4px 4px #999966;        
+	box-shadow:  2px 2px 4px 4px #999966;
+	-webkit-border-radius: 10px;   
+	border-radius: 5px;
+	overflow:hidden;
+}
+.fpDept img {
+	padding-left:17px;
+	padding-bottom:10px;
+	padding-top:5px;
+}
+
+.fpDept span.fpDeptName {
+	margin-left:35px;
+	margin-top:15px;
+	float:left;
+	margin-right:5px;
+	background: url('../images/arrow.png') no-repeat;
+	background-position: right center;
+	width:153px;	
+}
+
+	
+.fpDept span.fpDeptName a, #sideBarLeft h2 {
+	font-size:12px;
+	text-transform:uppercase;
+	font-weight:bold
+}
+
+#sideBarLeft table.views-view-grid
+{	
+	border-collapse:separate;
+	border-spacing:10px;
+	width:120px;
+	margin-bottom:20px;
+
+}
+
+#sideBarLeft table.views-view-grid td
+{
+	background-color:#f5f5f5;
+
+}
+
+#sideBarRight div #block-widgets-s-twitter-profile-widget h2
+{
+	border-top-style:solid;
+	border-top-color:#e9eaea;
+	border-top-width:10px;
+	height: 20px;
+	background-color:#ffffff;
+	margin-top:10px;
+	margin-bottom:0px;
+	padding-top:8px;
+	
+}
+
+/*1 - Home Page CSS END */
+
+/*2 - Services(Service Listing) CSS START */
+
+#leftColumn {
+	width: 384px;
+	margin-left:24px;
+	float:left;
+	padding:24px;
+}
+#rightColumn {
+	width: 384px;
+	margin-left:24px;
+	float:right;
+	padding:24px
+}
+
+#deptSlider {
+	width:940px;
+	height:345px;
+	padding:10px;
+	background: #ffffff;
+}
+
+.subDepts {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.subDeptTitles {
+	background: #f9fcfc url('../images/arrows.png') no-repeat;
+	background-position: right center;
+	padding-right: 50px;
+	padding-bottom:10px;
+	padding-top:10px;
+	padding-left:20px;
+	vertical-align:middle;
+	margin-bottom:10px;
+	width:200px;
+	margin-right:30px;
+	border: 1px solid #e0e1e1;
+	
+}
+
+.service {
+	padding-bottom:20px;
+	border-bottom:2px solid #7acdee;
+}
+.description{
+	color:#9c9d9d;
+	font-size:16px;
+	text-align:justify;
+	margin:0;
+}
+
+h2.title {
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+p {
+	color:#787979;
+}
+
+.service .articles {
+	padding-bottom:auto;
+	border-bottom:none;
+}
+.service td.subDepartmentRow {/*Because .articles class is used in both services page and service page*/
+	width:auto;
+	padding-left:0px;
+	margin-left:auto;
+	margin-right:auto;
+	border-right:none;
+	border-collapse:collapse;
+}
+
+/*2 - Services (Service Listing) CSS END*/
+
+/*3 - Service Page CSS START */
+.moreLink {
+	float:right;
+	padding-right:20px;
+	background:url('../images/arrow.png') no-repeat;
+	background-position:right center;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+p {
+	color:#787979;
+/*  444646 = darker for important*/
+}
+ul li {
+	color:#787979;
+}
+
+h2.title {
+	text-transform:uppercase;
+}
+
+.description{
+	color:#9c9d9d;
+	font-size:16px;
+	text-align:justify;
+	margin-bottom:15px;
+}
+
+.articles {
+	padding-bottom:20px;
+	border-bottom:1px #cccccc solid;
+}
+.articles td, .subDepts td {
+	width:580px;
+	padding-left:20px;
+	margin-left:2.5%;
+	margin-right:2.5%;
+	border-right:1px solid #cccccc;
+	border-collapse:collapse;
+}
+
+.articles td.col-last , .subDepts  td.col-last {
+	border:none;
+}
+
+.articles .image {
+	float:left;
+	margin-right:15px;
+}
+
+.articles .description {
+	float:left;
+}
+
+.articles tr {
+	vertical-align:top;
+}
+.subDepts .title {
+	background: #555351;
+	
+	vertical-align:middle;
+	margin-bottom:10px;
+	width:320px;
+	margin-right:100px;
+	border: 1px solid #e0e1e1;
+}
+
+.subDepts .title a {
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+	padding-left:10px;
+}
+/* 3 - Service Page CSS END */
+ /* 4 - Training Page CSS BEGIN */
+ .training {
+	clear:both;
+	margin-bottom:25px;
+}
+.trainTitle a {
+	font-size: 1.2em;
+	font-weight: bold;
+	
+}
+
+.trainDescription p {
+	font-size: 0.75em;
+	margin-top:0;
+	margin-bottom:5px;
+	
+}
+
+.trainFile ul {
+	list-style: none;
+	float: right;
+	display: block;
+}
+/*4 - Training Page CSS END */
+
+/*5 - Projects CSS START*/
+.field-type-image {
+	float:right;
+	margin-left:10px;
+}
+/*5 - Projects CSS END */
+
+/*6 - About CSS START */
+#middle {
+	width:960px;
+	clear:both;
+	display:block;
+	padding:10px;
+}
+#bios {
+	height:	395px;
+	width:100%;
+	background: #d9d9d8;
+	clear:both;
+}
+
+#biosViewer {
+	height:280px;
+	width:940px;
+	background: #d9d9d8;
+	display:block;
+	margin:0;
+	padding:10px;
+}
+#biosViewer .biosViewTitle {
+	float:left;
+	display:inline;
+	color:#000000;
+	font-size:18px;
+}
+
+#biosViewer img {
+	display:inline;
+	float:right;
+}
+
+#biosViewer	.biosDescription {
+	text-align:justify;
+	width:70%;
+	float:left;
+	margin-top:50px;
+	display:inline;
+}
+	
+#biosScroller{
+	height:95px;
+	width:100%;
+	background:#1b1a1a;
+	display:block;
+	margin:0;
+}
+#biosScroller li.jcarousel-item {
+	background: transparent;
+	color:white;
+}
+#hiddenBios{
+	display:none;
+}
+
+#about {
+	margin-left:50px;
+	clear:both;
+	margin-bottom:30px;
+	margin-top:30px;
+}
+#about .abtButton {
+	background: #f9fcfc url('../images/arrows.png') no-repeat;
+	background-position: right center;
+	padding-right: 50px;
+	padding-bottom:10px;
+	vertical-align:middle;
+	margin-bottom:10px;
+	width:300px;
+	margin-right:100px;
+	border: 1px solid #e0e1e1;
+	
+}
+
+#about .abtButton a{
+	padding:15px;
+	margin-top:5px;
+}
+#associates {
+	width:300px;
+	margin-left:50px;
+	padding-right:100px;
+	float:left;
+	border-right: 1px #ccc solid;
+	margin-bottom:20px;
+}
+#associates td {
+	padding-right:25px;
+	padding-bottom:10px;
+	text-align:center;
+	vertical-align:middle;
+}
+#fellows {
+	float:right;
+	margin-left:50px;
+	width:400px;
+	margin-bottom:20px;
+}
+
+#fellows td {
+	padding-right:20px;
+}
+#fellows tr {
+	vertical-align:top;
+}
+#fellows .fellowName {
+	width:117px;
+	font-size:15px;
+	color:#000000;
+	text-align:center;
+}
+#fellows .fellowTitle {
+	width:117px;
+	text-align:center;
+	font-size:13px;
+	color:#2c2b2b;
+}
+/*6 - About CSS END*/
+
+/*7 - Gallery CSS START*/
+.gallery img {
+	width:175px;
+	height:136px;
+}
+
+.gallery td {
+	padding:20px;
+}
+
+.gallery span a{
+	color:#000000;
+}
+
+/*7 - Gallery CSS END */

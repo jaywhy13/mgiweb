@@ -1,0 +1,7 @@
+; 
+name = Path Alias Suggestions
+description = Add template suggestions based on Path alias
+package = Other
+version = VERSION
+core = 7.x
+dependencies[] = path
