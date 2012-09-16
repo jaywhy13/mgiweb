@@ -1,0 +1,28 @@
+/*Service Listing Overrides*/
+/*It is necessary to have this in a different file, because this overrides the carousel's arrow size, and 
+this effect should only be reflected in the service listing page */
+
+a.jcarousel-prev-horizontal {
+	background-image: url('../images/arrowLeft.png') !important;
+	background-repeat: no-repeat;
+	height:100px !important;
+	width:40px !important;
+}
+
+a.jcarousel-prev-horizontal:hover {
+	background-position:0 0  !important;
+}
+
+
+a.jcarousel-next-horizontal {
+	background-image: url('../images/arrowRight.png') !important;
+	background-repeat: no-repeat;
+	height:100px !important;
+	width:40px !important;
+	margin-left:100px !important;
+	background-position:0 0  !important;
+}
+
+a.jcarousel-next-horizontal:hover {
+	background-position:0 0  !important;
+}

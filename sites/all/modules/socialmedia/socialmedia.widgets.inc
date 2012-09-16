@@ -210,7 +210,7 @@ function socialmedia_base_platforms() {
     'group' => t('Social media: RSS'),
   );
   $platforms['rss']['templates'] = array(
-    'feed-url' => "[?profile_url=[socialmedia:sm-rss_url]?]",
+    'feed-url' => $base_path . "[?profile_url=[socialmedia:sm-rss_url]?]",
     'feed-text-link' => '<a href="[?profile_url=[socialmedia:sm-rss_url]?]" title="Subscribe via RSS"[?link-target= target="{[socialmedia:sm-default_link_target_profile]}"?][?link-rel= rel="{[socialmedia:sm-default_link_rel_profile]}"?]>[?profile_feedname=[socialmedia:sm-rss_feedname]?]</a>',  
     'feed-button' => '<a href="[?profile_url=[socialmedia:sm-rss_url]?]" title="Subscribe to [?profile_feedname=[socialmedia:sm-slideshare_feedname]?] via RSS"[?link-target= target="{[socialmedia:sm-default_link_target_profile]}"?][?link-rel= rel="{[socialmedia:sm-default_link_rel_profile]}"?]><img src="[?icon-path=[socialmedia:sm-rss_icon-path]?]" alt="SlideShare icon" ></a>',
   );
