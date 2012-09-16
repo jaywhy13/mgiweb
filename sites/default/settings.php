@@ -205,9 +205,9 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'mgi',
-      'username' => 'jay',
-      'password' => 'jay',
+      'database' => 'mgi2012',
+      'username' => 'mgidbadmin',
+      'password' => 'T1argp!',
       'host' => 'localhost',
       'port' => '5432',
       'driver' => 'pgsql',
