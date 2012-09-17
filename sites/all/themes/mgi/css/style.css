@@ -478,6 +478,9 @@ h2.title {
 	font-weight:bold;
 	padding-left:10px;
 }
+.subDepartmentList td {
+	width:auto;
+}
 /* 3 - Service Page CSS END */
  /* 4 - Training Page CSS BEGIN */
  .training {
