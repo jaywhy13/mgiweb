@@ -252,7 +252,7 @@ h2 {
 	color:#000000;
 	margin-top:5px;
 	margin-bottom:20px;
-	text-align:justify;
+	text-align:left;
 }
 
 .frontPageNews p a {
@@ -266,8 +266,8 @@ h2 {
 	background-position: left bottom;
 	margin-top:10px;
 	margin-bottom:10px;
-	-webkit-box-shadow:  2px 2px 4px 4px #999966;        
-	box-shadow:  2px 2px 4px 4px #999966;
+	-webkit-box-shadow:  2px 2px 2px 3px #F5D5E2; 
+	box-shadow:  2px 2px 2px 3px #F5D5E2;
 	-webkit-border-radius: 10px;   
 	border-radius: 5px;
 	overflow:hidden;
@@ -418,7 +418,7 @@ p {
 	color:#787979;
 /*  444646 = darker for important*/
 }
-ul li {
+li {
 	color:#787979;
 }
 
@@ -481,6 +481,7 @@ h2.title {
 .subDepartmentList td {
 	width:auto;
 }
+
 /* 3 - Service Page CSS END */
  /* 4 - Training Page CSS BEGIN */
  .training {
@@ -626,6 +627,7 @@ h2.title {
 	font-size:15px;
 	color:#000000;
 	text-align:center;
+	margin: 0;
 }
 #fellows .fellowTitle {
 	width:117px;
@@ -647,6 +649,10 @@ h2.title {
 
 .gallery span a{
 	color:#000000;
+}
+
+.gallery tr {
+	vertical-align:top;
 }
 
 /*7 - Gallery CSS END */
