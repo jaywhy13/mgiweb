@@ -252,7 +252,7 @@ h2 {
 	color:#000000;
 	margin-top:5px;
 	margin-bottom:20px;
-	text-align:justify;
+	text-align:left;
 }
 
 .frontPageNews p a {
@@ -266,8 +266,8 @@ h2 {
 	background-position: left bottom;
 	margin-top:10px;
 	margin-bottom:10px;
-	-webkit-box-shadow:  2px 2px 4px 4px #999966;        
-	box-shadow:  2px 2px 4px 4px #999966;
+	-webkit-box-shadow:  2px 2px 2px 3px #F5EDF0; 
+	box-shadow:  2px 2px 2px 3px #F5EDF0;
 	-webkit-border-radius: 10px;   
 	border-radius: 5px;
 	overflow:hidden;
@@ -322,7 +322,9 @@ h2 {
 	padding-top:8px;
 	
 }
-
+.twtr-ft {
+	background-color:#E6E6E6;
+}
 /*1 - Home Page CSS END */
 
 /*2 - Services(Service Listing) CSS START */
@@ -418,7 +420,7 @@ p {
 	color:#787979;
 /*  444646 = darker for important*/
 }
-ul li {
+li {
 	color:#787979;
 }
 
@@ -478,6 +480,10 @@ h2.title {
 	font-weight:bold;
 	padding-left:10px;
 }
+.subDepartmentList td {
+	width:auto;
+}
+
 /* 3 - Service Page CSS END */
  /* 4 - Training Page CSS BEGIN */
  .training {
@@ -623,6 +629,7 @@ h2.title {
 	font-size:15px;
 	color:#000000;
 	text-align:center;
+	margin: 0;
 }
 #fellows .fellowTitle {
 	width:117px;
@@ -646,4 +653,11 @@ h2.title {
 	color:#000000;
 }
 
+.gallery tr {
+	vertical-align:top;
+}
+
+h3 {
+	color:#7ACDEE;
+}
 /*7 - Gallery CSS END */
