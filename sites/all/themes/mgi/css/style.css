@@ -5,7 +5,7 @@
 2 - Services (Service Listing)
 3 - Service Page
 4 - Training Page
-5 - Projects Page
+5 - Project Page
 6 - About Page
 7 - Gallery
 */
@@ -136,7 +136,7 @@ h2 {
 	height:445px;
 	margin-top:-100px;
 	background: #ffffff;
-	position:relative;
+	position:absolute;
 	overflow:hidden;
 }
 
@@ -159,6 +159,7 @@ h2 {
 	overflow:hidden;
 	padding-left:10px;
 	padding-top:25px;
+	margin-top:325px;
 }
 
 #sideBarRight h2, #sideBarRight h2 a  {
@@ -182,6 +183,7 @@ h2 {
 	float:left;
 	margin-right:0;
 	overflow:hidden;
+	margin-top:325px;
 }
 
 #mid{
@@ -193,6 +195,7 @@ h2 {
 	padding-left:10px;
 	padding-right:10px;
 	overflow:hidden;
+	margin-top:325px;
 }
 
 .sideVids img, .sideVids td
@@ -336,10 +339,9 @@ h2 {
 	padding:24px;
 }
 #rightColumn {
-	width: 384px;
-	margin-left:24px;
-	float:right;
-	padding:24px
+	width: 394px;
+	float: left;
+	padding-top: 34px;
 }
 
 #deptSlider {
@@ -510,12 +512,12 @@ h2.title {
 }
 /*4 - Training Page CSS END */
 
-/*5 - Projects CSS START*/
+/*5 - Project CSS START*/
 .field-type-image {
 	float:right;
 	margin-left:10px;
 }
-/*5 - Projects CSS END */
+/*5 - Project CSS END */
 
 /*6 - About CSS START */
 #middle {
@@ -661,3 +663,43 @@ h3 {
 	color:#7ACDEE;
 }
 /*7 - Gallery CSS END */
+
+/*8 - Projects List CSS START */
+.project {
+	clear:both;
+}
+
+.project h3 a{
+	color:#7acdee;
+	text-decoration:none;
+	font-size:0.8em;
+}
+.project h3 a:hover {
+	text-decoration:underline;
+}
+.project h3 {
+	margin-bottom:0px;
+	padding-bottom:0px;
+	margin-top:30px;
+}
+
+.project p {
+    font-size:0.8em;
+	color:#000000;
+	margin-top:5px;
+	margin-bottom:20px;
+	text-align:left;
+	float:left;
+	width:85%;
+}
+
+.project p a {
+	color: #7acdee;
+	text-decoration:none;
+	float:left;
+}
+
+.project div {
+	float:right;
+}
+/*8 - Projects List CSS END */
