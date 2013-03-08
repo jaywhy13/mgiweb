@@ -121,10 +121,16 @@ h2 {
 	
 	
 #footer span {
-	float:left;
-	display:inline;
-	padding-top:15px;
-	padding-left:5px;
+	float: left;
+	display: inline;
+	padding-top: 4px;
+	padding-left: 15px;
+	line-height: 22px;
+	background-image: url('../images/phone_white.png');
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-position-x: 3px;
+	background-position-y: 28px;
 }
 
 /*0-General CSS END */
